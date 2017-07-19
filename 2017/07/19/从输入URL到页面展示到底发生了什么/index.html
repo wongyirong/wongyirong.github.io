@@ -8,17 +8,19 @@
   <link rel="dns-prefetch" href="https://wongyirong.github.io">
   <title>从输入URL到页面加载完成到底发生了什么？ | 裙角飞扬</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;emsp;&amp;emsp;这应该是我开始学习前端之后看到的次数最多的一道面试题目，也是我最怕的一道题目了。计算机网络和硬件方面我还是个文盲，我对软件一直更感兴趣一点，对网络和硬件就比较心虚，寒暑假回家大爷大妈让我修电脑的时候，我只能无奈地一再强调自己是学软件的。为了更好地 为人民服务 学习前端，我准备从头到尾理清这道题，借此完成计算网络的攻坚克难战，顺便准备技术交流的素材。&amp;emsp;&amp;emsp;1">
+  <meta name="description" content="&amp;emsp;&amp;emsp;这应该是我开始学习前端之后看到的次数最多的一道面试题目，也是我最怕的一道题目了。计算机网络和硬件方面我还是个文盲，我对软件一直更感兴趣一点，对网络和硬件就比较心虚，寒暑假回家大爷大妈让我修电脑的时候，我只能无奈地一再强调自己是学软件的。为了更好地 为人民服务 学习前端，我准备从头到尾理清这道题，借此完成计算网络的攻坚克难战，顺便准备技术交流的素材。&amp;emsp;&amp;emsp;在">
 <meta name="keywords" content="学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从输入URL到页面加载完成到底发生了什么？">
 <meta property="og:url" content="https://wongyirong.github.io/2017/07/19/从输入URL到页面展示到底发生了什么/index.html">
 <meta property="og:site_name" content="裙角飞扬">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;这应该是我开始学习前端之后看到的次数最多的一道面试题目，也是我最怕的一道题目了。计算机网络和硬件方面我还是个文盲，我对软件一直更感兴趣一点，对网络和硬件就比较心虚，寒暑假回家大爷大妈让我修电脑的时候，我只能无奈地一再强调自己是学软件的。为了更好地 为人民服务 学习前端，我准备从头到尾理清这道题，借此完成计算网络的攻坚克难战，顺便准备技术交流的素材。&amp;emsp;&amp;emsp;1">
-<meta property="og:updated_time" content="2017-07-19T01:58:23.972Z">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;这应该是我开始学习前端之后看到的次数最多的一道面试题目，也是我最怕的一道题目了。计算机网络和硬件方面我还是个文盲，我对软件一直更感兴趣一点，对网络和硬件就比较心虚，寒暑假回家大爷大妈让我修电脑的时候，我只能无奈地一再强调自己是学软件的。为了更好地 为人民服务 学习前端，我准备从头到尾理清这道题，借此完成计算网络的攻坚克难战，顺便准备技术交流的素材。&amp;emsp;&amp;emsp;在">
+<meta property="og:image" content="https://www.bokeyy.com/wp-content/uploads/2014/11/IMG_3882_s.jpg">
+<meta property="og:updated_time" content="2017-07-19T06:13:05.057Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从输入URL到页面加载完成到底发生了什么？">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;这应该是我开始学习前端之后看到的次数最多的一道面试题目，也是我最怕的一道题目了。计算机网络和硬件方面我还是个文盲，我对软件一直更感兴趣一点，对网络和硬件就比较心虚，寒暑假回家大爷大妈让我修电脑的时候，我只能无奈地一再强调自己是学软件的。为了更好地 为人民服务 学习前端，我准备从头到尾理清这道题，借此完成计算网络的攻坚克难战，顺便准备技术交流的素材。&amp;emsp;&amp;emsp;1">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;这应该是我开始学习前端之后看到的次数最多的一道面试题目，也是我最怕的一道题目了。计算机网络和硬件方面我还是个文盲，我对软件一直更感兴趣一点，对网络和硬件就比较心虚，寒暑假回家大爷大妈让我修电脑的时候，我只能无奈地一再强调自己是学软件的。为了更好地 为人民服务 学习前端，我准备从头到尾理清这道题，借此完成计算网络的攻坚克难战，顺便准备技术交流的素材。&amp;emsp;&amp;emsp;在">
+<meta name="twitter:image" content="https://www.bokeyy.com/wp-content/uploads/2014/11/IMG_3882_s.jpg">
   
   
     <link rel="icon" href="/images/favicon.png">
@@ -170,7 +172,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&emsp;&emsp;这应该是我开始学习前端之后看到的次数最多的一道面试题目，也是我最怕的一道题目了。计算机网络和硬件方面我还是个文盲，我对软件一直更感兴趣一点，对网络和硬件就比较心虚，寒暑假回家大爷大妈让我修电脑的时候，我只能无奈地一再强调自己是学软件的。为了更好地 <del>为人民服务</del> 学习前端，我准备从头到尾理清这道题，借此完成计算网络的攻坚克难战，顺便准备技术交流的素材。<br>&emsp;&emsp;1.输入URL后浏览器做了什么</p>
+        <p>&emsp;&emsp;这应该是我开始学习前端之后看到的次数最多的一道面试题目，也是我最怕的一道题目了。计算机网络和硬件方面我还是个文盲，我对软件一直更感兴趣一点，对网络和硬件就比较心虚，寒暑假回家大爷大妈让我修电脑的时候，我只能无奈地一再强调自己是学软件的。为了更好地 <del>为人民服务</del> 学习前端，我准备从头到尾理清这道题，借此完成计算网络的攻坚克难战，顺便准备技术交流的素材。<br>&emsp;&emsp;在我最开始的意识里，这个过程应该是在浏览器地址栏输入URL之后信息被送到了某处，然后获得回复，内容按照一定格式(前端要做的工作)展示在Web页面上。而事实上在电脑显示器后面在这短短的时间(网速好的话)内有太多看不到的过程发生了。<br>1.输入URL后浏览器做了什么<br>我们先来理解一下URL是什么，它为我们做了什么<br>(1)URL Uniform Resource Locator 统一资源定位符</p>
+<p>2.在传输过程中发生了什么<br>http协议 应用层<br>之前先了解一下TCP/IP协议族，我们都知道TCP/IP的四层：应用层，传输层、网络层、数据链路层。</p>
+<p>(1)负责传输的IP协议 Internet Protocol 网际协议 网络层</p>
+<p>(2)确保可靠性的TCP协议 Transmission Control Protocol 传输控制协议 传输层<br>为什么说它是确保可靠性的呢，TCP协议为了准确无误的将数据送达目标处采用了三次握手three-way-handshaking策略<br><img src="https://www.bokeyy.com/wp-content/uploads/2014/11/IMG_3882_s.jpg" alt=""><br>除了上述三次无首，TCP协议还有其他手段保证通信的可靠性。<br>(3)负责域名解析的DNS服务 Domain Name System 应用层</p>
+<p>分为4个步骤：</p>
+<p>（1），当发送一个URL请求时，不管这个URL是Web页面的URL还是Web页面上每个资源的URL，浏览器都会开启一个线程来处理这个请求，同时在远程DNS服务器上启动一个DNS查询。这能使浏览器获得请求对应的IP地址。</p>
+<p>（2）， 浏览器与远程Web服务器通过TCP三次握手协商来建立一个TCP/IP连接。该握手包括一个同步报文，一个同步-应答报文和一个应答报文，这三个报文在 浏览器和服务器之间传递。该握手首先由客户端尝试建立起通信，而后服务器应答并接受客户端的请求，最后由客户端发出该请求已经被接受的报文。</p>
+<p>（3），一旦TCP/IP连接建立，浏览器会通过该连接向远程服务器发送HTTP的GET请求。远程服务器找到资源并使用HTTP响应返回该资源，值为200的HTTP响应状态表示一个正确的响应。</p>
+<p>（4），此时，Web服务器提供资源服务，客户端开始下载资源。</p>
+<p>参考资料：<br>《图解http》<br>腾讯IMWeb知乎专栏</p>
 
       
 
