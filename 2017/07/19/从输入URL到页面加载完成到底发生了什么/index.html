@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/%E5%AE%9E%E4%BD%93%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5.jpg">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/IMG_4387%2820170720-105758%29.jpg">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93.png">
-<meta property="og:updated_time" content="2017-07-22T02:54:34.922Z">
+<meta property="og:updated_time" content="2017-07-22T03:07:29.849Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从输入URL到页面加载完成到底发生了什么？">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;这应该是我开始学习前端之后看到的次数最多的一道面试题目，也是我最怕的一道题目了。计算机网络和硬件方面我还是个文盲，我对软件一直更感兴趣一点，对网络和硬件就比较心虚，寒暑假回家大爷大妈让我修电脑的时候，我只能无奈地一再强调自己是学软件的。为了更好地 为人民服务 学习前端，我准备从头到尾理清这道题，借此完成计算网络的攻坚克难战，顺便准备技术交流的素材。&amp;emsp;&amp;emsp;在">
@@ -184,29 +184,24 @@
       
         <p>&emsp;&emsp;这应该是我开始学习前端之后看到的次数最多的一道面试题目，也是我最怕的一道题目了。计算机网络和硬件方面我还是个文盲，我对软件一直更感兴趣一点，对网络和硬件就比较心虚，寒暑假回家大爷大妈让我修电脑的时候，我只能无奈地一再强调自己是学软件的。为了更好地 <del>为人民服务</del> 学习前端，我准备从头到尾理清这道题，借此完成计算网络的攻坚克难战，顺便准备技术交流的素材。<br>&emsp;&emsp;在我最开始的意识里，这个过程应该是在浏览器地址栏输入URL之后信息被送到了某处，然后获得回复，内容按照一定格式(前端要做的工作)展示在Web页面上。而事实上在电脑显示器后面在这短短的时间(网速好的话)内有太多看不到的过程发生了。</p>
 <h3 id="1-输入URL后浏览器做了什么"><a href="#1-输入URL后浏览器做了什么" class="headerlink" title="1.输入URL后浏览器做了什么"></a>1.输入URL后浏览器做了什么</h3><p>我们先来理解一下URL是什么，它为我们做了什么</p>
-<p>####(1)URL Uniform Resource Locator 统一资源定位符</p>
-<p>URI（Uniform Resource Identifier) 统一资源标识符<br>URI用字符串标识某一互联网资源，而URL表示资源的地点（互联网上所处的位置），URL是URI的子集。<br>基本URL包含协议方案名、服务器名称（或IP地址）、文件路径，比如</p>
+<p>(1)URL Uniform Resource Locator 统一资源定位符<br>URI（Uniform Resource Identifier) 统一资源标识符<br>URI用字符串标识某一互联网资源，而URL表示资源的地点（互联网上所处的位置），URL是URI的子集。<br>基本URL包含协议方案名、服务器名称（或IP地址）、文件路径，比如</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://wongyirong.github.io/2017/07/19/从输入URL到页面展示到底发生了什么/</div></pre></td></tr></table></figure>
-<p>####(2)负责域名解析的DNS服务 Domain Name System 应用层 </p>
-<p>DNS协议提供通过域名查找IP地址，或逆向从IP地址反查域名的服务<br>URL和DNS协议为我们标识了资源的地点，让我们知道去哪里请求需要的资源。</p>
-<p>###2.在传输过程中发生了什么</p>
-<p>Web采用HTTP协议作为规范，完成从客户端到服务器端的通信。<br>HTTP协议 Hyper Text Transfer Protocol 超文本传输协议 应用层<br>HTTP协议基于TCP/IP协议族进行网络通信。其中包括：</p>
-<p>####(1)负责传输的IP协议 Internet Protocol 网际协议 网络层<br>MAC地址 Media Acess Control Address<br>使用ARP协议进行通信</p>
-<p>####(2)确保可靠性的TCP协议 Transmission Control Protocol 传输控制协议 传输层<br>为什么说它是确保可靠性的呢，TCP协议为了准确无误的将数据送达目标处采用了三次握手three-way-handshaking策略<br><img src="http://ot4uwpond.bkt.clouddn.com/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.jpg" alt=""><br><em>TCP 协议的三次握手 – 用以确认数据传输正确，会重试到完整地完成为止。</em></p>
-<p>####TCP/IP传输流：<br><img src="http://ot4uwpond.bkt.clouddn.com/TCP.jpg" alt=""><br>作为发送端的客户端在应用层（HTTP协议）发出HTTP请求。为了传输方便在传输层（TCP协议）把从应用层处收到的数据（HTTP请求报文）进行分割，并在格格报文上打上标记序号及端口号后转发给网络层。在网络层（IP协议）增加作为通讯目的地的MAC地址后转发给数据链路层。<br>接收端的服务器在数据链路层接收到数据，发送到网络层传输层一直到应用层。这时候接收端的服务器才真正收到了了客户端的HTTP请求。<br><img src="http://ot4uwpond.bkt.clouddn.com/IMG_4372.JPG" alt=""></p>
-<p>####HTTP请求由三部分组成，分别是：请求行、首部字段、报文主体</p>
-<p><img src="http://ot4uwpond.bkt.clouddn.com/%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87.png" alt=""><br>请求行以一个方法符号开头，以空格分开，后面跟着请求的URI和协议的版本，格式如下：Method Request-URI HTTP-Version CRLF<br>其中 Method表示请求方法；Request-URI是一个统一资源标识符；HTTP-Version表示请求的HTTP协议版本；CRLF表示回车和换行（除了作为结尾的CRLF外，不允许出现单独的CR或LF字符）。</p>
-<p>####请求方法有多种：<br>GET     请求获取Request-URI所标识的资源<br>POST    在Request-URI所标识的资源后附加新的数据<br>HEAD    请求获取由Request-URI所标识的资源的响应消息报头<br>PUT     请求服务器存储一个资源，并用Request-URI作为其标识<br>DELETE  请求服务器删除Request-URI所标识的资源<br>TRACE   请求服务器回送收到的请求信息，主要用于测试或诊断<br>CONNECT 保留将来使用<br>OPTIONS 请求查询服务器的性能，或者查询与资源相关的选项和需求</p>
+<p>(2)负责域名解析的DNS服务 Domain Name System 应用层<br>DNS协议提供通过域名查找IP地址，或逆向从IP地址反查域名的服务<br>URL和DNS协议为我们标识了资源的地点，让我们知道去哪里请求需要的资源。</p>
+<h3 id="2-在传输过程中发生了什么"><a href="#2-在传输过程中发生了什么" class="headerlink" title="2.在传输过程中发生了什么"></a>2.在传输过程中发生了什么</h3><p>Web采用HTTP协议作为规范，完成从客户端到服务器端的通信。<br>HTTP协议 Hyper Text Transfer Protocol 超文本传输协议 应用层<br>HTTP协议基于TCP/IP协议族进行网络通信。其中包括：</p>
+<p>(1)负责传输的IP协议 Internet Protocol 网际协议 网络层<br>MAC地址 Media Acess Control Address<br>使用ARP协议进行通信</p>
+<p>(2)确保可靠性的TCP协议 Transmission Control Protocol 传输控制协议 传输层<br>为什么说它是确保可靠性的呢，TCP协议为了准确无误的将数据送达目标处采用了三次握手three-way-handshaking策略<br><img src="http://ot4uwpond.bkt.clouddn.com/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.jpg" alt=""><br><em>TCP 协议的三次握手 – 用以确认数据传输正确，会重试到完整地完成为止。</em></p>
+<h4 id="TCP-IP传输流："><a href="#TCP-IP传输流：" class="headerlink" title="TCP/IP传输流："></a>TCP/IP传输流：</h4><p><img src="http://ot4uwpond.bkt.clouddn.com/TCP.jpg" alt=""><br>作为发送端的客户端在应用层（HTTP协议）发出HTTP请求。为了传输方便在传输层（TCP协议）把从应用层处收到的数据（HTTP请求报文）进行分割，并在格格报文上打上标记序号及端口号后转发给网络层。在网络层（IP协议）增加作为通讯目的地的MAC地址后转发给数据链路层。<br>接收端的服务器在数据链路层接收到数据，发送到网络层传输层一直到应用层。这时候接收端的服务器才真正收到了了客户端的HTTP请求。<br><img src="http://ot4uwpond.bkt.clouddn.com/IMG_4372.JPG" alt=""></p>
+<h4 id="HTTP请求由三部分组成，分别是：请求行、首部字段、报文主体"><a href="#HTTP请求由三部分组成，分别是：请求行、首部字段、报文主体" class="headerlink" title="HTTP请求由三部分组成，分别是：请求行、首部字段、报文主体"></a>HTTP请求由三部分组成，分别是：请求行、首部字段、报文主体</h4><p><img src="http://ot4uwpond.bkt.clouddn.com/%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87.png" alt=""><br>请求行以一个方法符号开头，以空格分开，后面跟着请求的URI和协议的版本，格式如下：Method Request-URI HTTP-Version CRLF<br>其中 Method表示请求方法；Request-URI是一个统一资源标识符；HTTP-Version表示请求的HTTP协议版本；CRLF表示回车和换行（除了作为结尾的CRLF外，不允许出现单独的CR或LF字符）。</p>
+<h4 id="请求方法有多种："><a href="#请求方法有多种：" class="headerlink" title="请求方法有多种："></a>请求方法有多种：</h4><p>GET     请求获取Request-URI所标识的资源<br>POST    在Request-URI所标识的资源后附加新的数据<br>HEAD    请求获取由Request-URI所标识的资源的响应消息报头<br>PUT     请求服务器存储一个资源，并用Request-URI作为其标识<br>DELETE  请求服务器删除Request-URI所标识的资源<br>TRACE   请求服务器回送收到的请求信息，主要用于测试或诊断<br>CONNECT 保留将来使用<br>OPTIONS 请求查询服务器的性能，或者查询与资源相关的选项和需求</p>
 <p>在html页面中输入URL、访问超链接、form提交（当然也可以设置method为POST）等都是GET请求方法，比如本题“从输入URL到页面加载完成到底发生了什么？”</p>
-<p>####GET和POST对比：<br>GET：一般用于信息获取，使用URL传递参数，对所发送信息的数量也有限制，一般在2000个字符<br>POST：一般用于修改服务器上的资源，对所发送的信息没有限制。<br>GET方式需要使用Request.QueryString来取得变量的值，而POST方式通过Request.Form来获取变量的值，也就是说Get是通过地址栏来传值，而Post是通过提交表单来传值。<br>然而，在以下情况中，请使用 POST 请求：无法使用缓存文件（更新服务器上的文件或数据库）；向服务器发送大量数据（POST 没有数据量限制）；发送包含未知字符的用户输入时，POST比GET更稳定也更可靠。</p>
-<p>####HTTP响应也是由三个部分组成，分别是：状态行、首部字段、报文主体<br><img src="http://ot4uwpond.bkt.clouddn.com/%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87.png" alt=""><br>状态行格式：HTTP-Version Status-Code Reason-Phrase CRLF<br>其中，HTTP-Version表示服务器HTTP协议的版本；Status-Code表示服务器发回的响应状态代码；Reason-Phrase表示状态代码的文本描述。比如HTTP/1.1 200 OK</p>
+<h4 id="GET和POST对比："><a href="#GET和POST对比：" class="headerlink" title="GET和POST对比："></a>GET和POST对比：</h4><p>GET：一般用于信息获取，使用URL传递参数，对所发送信息的数量也有限制，一般在2000个字符<br>POST：一般用于修改服务器上的资源，对所发送的信息没有限制。<br>GET方式需要使用Request.QueryString来取得变量的值，而POST方式通过Request.Form来获取变量的值，也就是说Get是通过地址栏来传值，而Post是通过提交表单来传值。<br>然而，在以下情况中，请使用 POST 请求：无法使用缓存文件（更新服务器上的文件或数据库）；向服务器发送大量数据（POST 没有数据量限制）；发送包含未知字符的用户输入时，POST比GET更稳定也更可靠。</p>
+<h4 id="HTTP响应也是由三个部分组成，分别是：状态行、首部字段、报文主体"><a href="#HTTP响应也是由三个部分组成，分别是：状态行、首部字段、报文主体" class="headerlink" title="HTTP响应也是由三个部分组成，分别是：状态行、首部字段、报文主体"></a>HTTP响应也是由三个部分组成，分别是：状态行、首部字段、报文主体</h4><p><img src="http://ot4uwpond.bkt.clouddn.com/%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87.png" alt=""><br>状态行格式：HTTP-Version Status-Code Reason-Phrase CRLF<br>其中，HTTP-Version表示服务器HTTP协议的版本；Status-Code表示服务器发回的响应状态代码；Reason-Phrase表示状态代码的文本描述。比如HTTP/1.1 200 OK</p>
 <p>响应状态代码有三位数字组成，第一个数字定义了响应的类别，且有五种可能取值：<br>1xx：指示信息–表示请求已接收，继续处理<br>2xx：成功–表示请求已被成功接收、理解、接受<br>3xx：重定向–要完成请求必须进行更进一步的操作<br>4xx：客户端错误–请求有语法错误或请求无法实现<br>5xx：服务器端错误–服务器未能实现合法的请求</p>
-<p>####常见状态代码、状态描述、说明：<br>200 OK  //客户端请求成功<br>400 Bad Request  //客户端请求有语法错误，不能被服务器所理解<br>401 Unauthorized //请求未经授权，这个状态代码必须和WWW-Authenticate报头域一起使用<br>403 Forbidden  //服务器收到请求，但是拒绝提供服务<br>404 Not Found  //请求资源不存在，eg：输入了错误的URL<br>500 Internal Server Error //服务器发生不可预期的错误<br>503 Server Unavailable  //服务器当前不能处理客户端的请求，一段时间后可能恢复正常</p>
+<h4 id="常见状态代码、状态描述、说明："><a href="#常见状态代码、状态描述、说明：" class="headerlink" title="常见状态代码、状态描述、说明："></a>常见状态代码、状态描述、说明：</h4><p>200 OK  //客户端请求成功<br>400 Bad Request  //客户端请求有语法错误，不能被服务器所理解<br>401 Unauthorized //请求未经授权，这个状态代码必须和WWW-Authenticate报头域一起使用<br>403 Forbidden  //服务器收到请求，但是拒绝提供服务<br>404 Not Found  //请求资源不存在，eg：输入了错误的URL<br>500 Internal Server Error //服务器发生不可预期的错误<br>503 Server Unavailable  //服务器当前不能处理客户端的请求，一段时间后可能恢复正常</p>
 <blockquote>
 <p>从100到199范围的HTTP状态码是信息报告码。基于各种原因考虑，大多数情况下我们<br>是很少看见这些代码的。首先，如果一个浏览器尝试访问一个网站，而网站返回这些代码时，它们往往都不会显示在屏幕上。它们只是浏览器使引用的内部码。另<br>外，这些代码不常见的另外一个原因是起初HTTP标准不允许使用这一范围的状态码。就其本身而言，它们也一直没有被广泛地使用。</p>
 </blockquote>
-<p>####HTTP/1.1首部字段一览</p>
-<p>47种首部字段</p>
+<h4 id="HTTP-1-1首部字段一览"><a href="#HTTP-1-1首部字段一览" class="headerlink" title="HTTP/1.1首部字段一览"></a>HTTP/1.1首部字段一览</h4><p>47种首部字段</p>
 <p><img src="http://ot4uwpond.bkt.clouddn.com/%E9%80%9A%E7%94%A8%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5.jpg" alt=""></p>
 <p><img src="http://ot4uwpond.bkt.clouddn.com/%E8%AF%B7%E6%B1%82%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5.jpg" alt=""></p>
 <p><img src="http://ot4uwpond.bkt.clouddn.com/%E5%93%8D%E5%BA%94%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5.jpg" alt=""></p>
@@ -216,9 +211,13 @@
 </blockquote>
 <p>响应的结果也同样利用TCP/IP通信协议向客户端回传。</p>
 <blockquote>
-<p>这里我的同学帮我补充了一点：关于cookie的状态管理<br>HTTP是无状态协议，他不对之前发生过的请求和响应的状态进行管理。也就是说，无法根据之前的状态进行本次的请求处理。<br>cookie技术通过在请求和响应报文中写入Cookie信息来控制客户端的状态。Cookie会根据从服务器端发送的响应的报文内的一个叫做Set-Cookie的首部字段信息，通知客户端保存Cookie。当下次客户端再往该服务器发送请求时，客户端会自动在请求报文中加入Cookie值后发送出去。服务器端发现客户端发送过来的Cookie后，会去检查究竟是从哪一个客户端发来的连接请求，然后对比服务器上的记录，最后的到之前的状态信息。<br><img src="http://ot4uwpond.bkt.clouddn.com/IMG_4387%2820170720-105758%29.jpg" alt=""><br>还有一种服务端的机制——Session。Session是保存在服务端的，有一个唯一标识。在服务端保存Session的方法很多，内存、数据库、文件都有。集群的时候也要考虑Session的转移，在大型的网站，一般会有专门的Session服务器集群，用来保存用户会话，这个时候 Session 信息都是放在内存的，使用一些缓存服务比如Redis之类的来放 Session。<br>区别：<br>Session是在服务端保存的一个数据结构，用来跟踪用户的状态，这个数据可以保存在集群、数据库、文件中；<br>Cookie是客户端保存用户信息的一种机制，用来记录用户的一些信息，也是实现Session的一种方式</p>
+<p>这里我的同学帮我补充了一点：关于cookie的状态管理<br>HTTP是无状态协议，他不对之前发生过的请求和响应的状态进行管理。也就是说，无法根据之前的状态进行本次的请求处理。<br>cookie技术通过在请求和响应报文中写入Cookie信息来控制客户端的状态。Cookie会根据从服务器端发送的响应的报文内的一个叫做Set-Cookie的首部字段信息，通知客户端保存Cookie。当下次客户端再往该服务器发送请求时，客户端会自动在请求报文中加入Cookie值后发送出去。服务器端发现客户端发送过来的Cookie后，会去检查究竟是从哪一个客户端发来的连接请求，然后对比服务器上的记录，最后的到之前的状态信息。</p>
 </blockquote>
-<p>###3.请求到数据后浏览器做了什么<br>当服务器提供了资源之后（HTML，CSS，JS，图片等），浏览器会执行下面的操作：<br>解析 —— HTML，CSS，JS<br>渲染 —— 构建 DOM 树 -&gt; 渲染 -&gt; 布局 -&gt; 绘制<br><img src="http://ot4uwpond.bkt.clouddn.com/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93.png" alt=""><br>（1）首先，浏览器渲染引擎从网络层取得请求的资源，一般以8kB大小分块传输。<br>（2）HTML解析器对HTML文档进行解析，生成解析树。解析树是以DOM（文档对象模型 Document Object Model）元素以及属性为节点的树。它是HTML文档的对象表示，同时也是HTML元素面向外部(如Javascript)的接口。树的根部是”Document”对象。整个DOM和HTML文档几乎是一对一的关系。<br>（3）遇到css标签解析CSS生成CSS规则树<br>（4）浏览器通过遍历CSS规则树和DOM节点树创建一个渲染树（Render Tree）<br>（5）页面布局和绘制</p>
+<p><img src="http://ot4uwpond.bkt.clouddn.com/IMG_4387%2820170720-105758%29.jpg" alt=""></p>
+<blockquote>
+<p>还有一种服务端的机制——Session。Session是保存在服务端的，有一个唯一标识。在服务端保存Session的方法很多，内存、数据库、文件都有。集群的时候也要考虑Session的转移，在大型的网站，一般会有专门的Session服务器集群，用来保存用户会话，这个时候 Session 信息都是放在内存的，使用一些缓存服务比如Redis之类的来放 Session。<br>区别：<br>Session是在服务端保存的一个数据结构，用来跟踪用户的状态，这个数据可以保存在集群、数据库、文件中；<br>Cookie是客户端保存用户信息的一种机制，用来记录用户的一些信息，也是实现Session的一种方式</p>
+</blockquote>
+<h3 id="3-请求到数据后浏览器做了什么"><a href="#3-请求到数据后浏览器做了什么" class="headerlink" title="3.请求到数据后浏览器做了什么"></a>3.请求到数据后浏览器做了什么</h3><p>当服务器提供了资源之后（HTML，CSS，JS，图片等），浏览器会执行下面的操作：<br>解析 —— HTML，CSS，JS<br>渲染 —— 构建 DOM 树 -&gt; 渲染 -&gt; 布局 -&gt; 绘制<br><img src="http://ot4uwpond.bkt.clouddn.com/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93.png" alt=""><br>（1）首先，浏览器渲染引擎从网络层取得请求的资源，一般以8kB大小分块传输。<br>（2）HTML解析器对HTML文档进行解析，生成解析树。解析树是以DOM（文档对象模型 Document Object Model）元素以及属性为节点的树。它是HTML文档的对象表示，同时也是HTML元素面向外部(如Javascript)的接口。树的根部是”Document”对象。整个DOM和HTML文档几乎是一对一的关系。<br>（3）遇到css标签解析CSS生成CSS规则树<br>（4）浏览器通过遍历CSS规则树和DOM节点树创建一个渲染树（Render Tree）<br>（5）页面布局和绘制</p>
 <blockquote>
 <p>注意：渲染结束后，JavaScript下载后JS操作修改DOM、修改样式都会造成渲染树的重新布局和重绘。只要修改DOM或修改了元素的形状或大小，就会触发Reflow，单纯修改元素的颜色只需Repaint一下。</p>
 </blockquote>
