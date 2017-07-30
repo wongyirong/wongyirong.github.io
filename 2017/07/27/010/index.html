@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://wongyirong.github.io">
-  <title>那些话儿 | 裙角飞扬</title>
+  <title>一个问题引出的正则表达式总结 | 裙角飞扬</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;emsp;&amp;emsp;我记性不好，又总是希望能记住生活中发生的听到的看到的所有事情，为此这些年一直坚持使用QQ空间留言板，用到都有人开始嘲笑我才慢慢转移阵地。后来收了workflow和印象笔记后，我开始每天和采蘑菇的小女孩似的，把喜欢的句子说过的话想珍藏的一切复制了往印象笔记里粘，还会时不时打开印象笔记一本满足的清点满筐的“蘑菇”。&amp;emsp;&amp;emsp;话特别多想法特别多的我在别人眼里越来越奇">
-<meta name="keywords" content="随笔">
+  <meta name="description" content="早上我同学给我发了张截图，让我给她解释一下这段正则的含义。/^(?:([A-Za-z]+):)?(\/&amp;#123;0,3&amp;#125;)([0-9.\-A-Aa-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/ 刚开始看觉得好乱，但仔细看一下里面的语法都是熟悉的，我耐下心来，在笔记本画了下草图就感觉比较清晰了，这是一段匹配URL的正则表">
+<meta name="keywords" content="学习笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="那些话儿">
-<meta property="og:url" content="https://wongyirong.github.io/2017/07/15/那些话儿/index.html">
+<meta property="og:title" content="一个问题引出的正则表达式总结">
+<meta property="og:url" content="https://wongyirong.github.io/2017/07/27/010/index.html">
 <meta property="og:site_name" content="裙角飞扬">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;我记性不好，又总是希望能记住生活中发生的听到的看到的所有事情，为此这些年一直坚持使用QQ空间留言板，用到都有人开始嘲笑我才慢慢转移阵地。后来收了workflow和印象笔记后，我开始每天和采蘑菇的小女孩似的，把喜欢的句子说过的话想珍藏的一切复制了往印象笔记里粘，还会时不时打开印象笔记一本满足的清点满筐的“蘑菇”。&amp;emsp;&amp;emsp;话特别多想法特别多的我在别人眼里越来越奇">
-<meta property="og:updated_time" content="2017-07-19T01:48:24.359Z">
+<meta property="og:description" content="早上我同学给我发了张截图，让我给她解释一下这段正则的含义。/^(?:([A-Za-z]+):)?(\/&amp;#123;0,3&amp;#125;)([0-9.\-A-Aa-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/ 刚开始看觉得好乱，但仔细看一下里面的语法都是熟悉的，我耐下心来，在笔记本画了下草图就感觉比较清晰了，这是一段匹配URL的正则表">
+<meta property="og:updated_time" content="2017-07-30T12:55:09.297Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="那些话儿">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;我记性不好，又总是希望能记住生活中发生的听到的看到的所有事情，为此这些年一直坚持使用QQ空间留言板，用到都有人开始嘲笑我才慢慢转移阵地。后来收了workflow和印象笔记后，我开始每天和采蘑菇的小女孩似的，把喜欢的句子说过的话想珍藏的一切复制了往印象笔记里粘，还会时不时打开印象笔记一本满足的清点满筐的“蘑菇”。&amp;emsp;&amp;emsp;话特别多想法特别多的我在别人眼里越来越奇">
+<meta name="twitter:title" content="一个问题引出的正则表达式总结">
+<meta name="twitter:description" content="早上我同学给我发了张截图，让我给她解释一下这段正则的含义。/^(?:([A-Za-z]+):)?(\/&amp;#123;0,3&amp;#125;)([0-9.\-A-Aa-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/ 刚开始看觉得好乱，但仔细看一下里面的语法都是熟悉的，我耐下心来，在笔记本画了下草图就感觉比较清晰了，这是一段匹配URL的正则表">
   
   
     <link rel="icon" href="/images/favicon.png">
@@ -150,27 +150,237 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="n-那些话儿" class="article article-type-n " itemscope itemprop="blogPost">
+            <article id="post-010" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      那些话儿
+      一个问题引出的正则表达式总结
     </h1>
   
 
         
-        <a href="/2017/07/15/那些话儿/" class="archive-article-date">
-  	<time datetime="2017-07-15T13:21:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-15</time>
+        <a href="/2017/07/27/010/" class="archive-article-date">
+  	<time datetime="2017-07-27T00:44:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&emsp;&emsp;我记性不好，又总是希望能记住生活中发生的听到的看到的所有事情，为此这些年一直坚持使用QQ空间留言板，用到都有人开始嘲笑我才慢慢转移阵地。后来收了workflow和印象笔记后，我开始每天和采蘑菇的小女孩似的，把喜欢的句子说过的话想珍藏的一切复制了往印象笔记里粘，还会时不时打开印象笔记一本满足的清点满筐的“蘑菇”。<br>&emsp;&emsp;话特别多想法特别多的我在别人眼里越来越奇怪了，而我不能理解的人和事情也越来越多，篮子里采了那么多蘑菇却只能自己偶尔的拿出来看看，晒不到太阳不可避免的开始发霉了。人总是期待被理解，被认可，孤独也不过是宁为玉碎不为瓦全。</p>
+        <p>早上我同学给我发了张截图，让我给她解释一下这段正则的含义。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">/^(?:([A-Za-z]+):)?(\/&#123;0,3&#125;)([0-9.\-A-Aa-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/</div></pre></td></tr></table></figure></p>
+<p>刚开始看觉得好乱，但仔细看一下里面的语法都是熟悉的，我耐下心来，在笔记本画了下草图就感觉比较清晰了，这是一段匹配URL的正则表达式文本。理清后觉得很有必要做一些整理归纳工作，加强对正则表达式的语法记忆，也为自己建立一个参考手册。</p>
+<h3 id="regexp对象"><a href="#regexp对象" class="headerlink" title="regexp对象"></a>regexp对象</h3><p>JavaScript内置对象RegExp<br>实例化有两种方式：<br>1.字面量<br>var reg1 = /\bbaidu\b/g;<br>2.构造函数：<br>var reg2 = new RegExp(“\bbaidu\b”, “g”);</p>
+<h4 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h4><p>g:global 全文搜索 不加g默认找到第一个匹配就停止<br>i:ignore case 忽略大小写 默认是大小写敏感<br>m:multiple lines 多行搜索</p>
+<h4 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h4><p>正则表达式由两种基本字符类型组成：</p>
+<ul>
+<li>原义文本字符</li>
+<li>元字符<br>元字符是在正则表达式中有特殊含义的非字母字符</li>
+</ul>
+<p>1.有特殊含义的标点符号<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">* + ? $ ^ . | \ ( ) &#123; &#125; [ ]</div></pre></td></tr></table></figure></p>
+<p>2.直接量字符</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">字母及数字</td>
+<td style="text-align:center">自身</td>
+</tr>
+<tr>
+<td style="text-align:center">\t</td>
+<td style="text-align:center">水平制表符</td>
+</tr>
+<tr>
+<td style="text-align:center">\v</td>
+<td style="text-align:center">垂直制表符</td>
+</tr>
+<tr>
+<td style="text-align:center">\n</td>
+<td style="text-align:center">换行符</td>
+</tr>
+<tr>
+<td style="text-align:center">\r</td>
+<td style="text-align:center">回车符</td>
+</tr>
+<tr>
+<td style="text-align:center">\0</td>
+<td style="text-align:center">空字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\f</td>
+<td style="text-align:center">换页符</td>
+</tr>
+</tbody>
+</table>
+<p>3.字符类</p>
+<ul>
+<li>将直接量字符单独放进方括号内就组成了字符类。一个字符类可以匹配它所包含的任意字符。</li>
+<li>可以通过“^”符号定义否定字符类，匹配所有不在方括号内的字符。</li>
+<li>还可以用“-”来表示范围a-z，类内部是可以连写的a-zA-Z。<br>另外：不在两个数字之间的就不认为是用来表示范围的。</li>
+</ul>
+<p>4.预定义类 匹配常见的字符类</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">等价类</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.</td>
+<td style="text-align:center">[^\r\n]</td>
+<td style="text-align:center">除了回车符和换行符之外的所有字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\d</td>
+<td style="text-align:center">[0-9]</td>
+<td style="text-align:center">数字字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\D</td>
+<td style="text-align:center">[^0-9]</td>
+<td style="text-align:center">非数字字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\s</td>
+<td style="text-align:center">[\t\n\x0B\f\r]</td>
+<td style="text-align:center">空白符</td>
+</tr>
+<tr>
+<td style="text-align:center">\S</td>
+<td style="text-align:center">[^\t\n\x0B\f\r]</td>
+<td style="text-align:center">非空白符</td>
+</tr>
+<tr>
+<td style="text-align:center">\w</td>
+<td style="text-align:center">[a-zA-Z_0-9]</td>
+<td style="text-align:center">单词字符（字母、数字、下划线）</td>
+</tr>
+<tr>
+<td style="text-align:center">\W</td>
+<td style="text-align:center">[^a-zA-Z_0-9]</td>
+<td style="text-align:center">非单词字符</td>
+</tr>
+</tbody>
+</table>
+<p>5.常用的边界匹配字符（锚字符）</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">^</td>
+<td style="text-align:center">匹配字符串的开头</td>
+</tr>
+<tr>
+<td style="text-align:center">$</td>
+<td style="text-align:center">匹配字符串的结尾</td>
+</tr>
+<tr>
+<td style="text-align:center">\b</td>
+<td style="text-align:center">单词边界</td>
+</tr>
+<tr>
+<td style="text-align:center">\B</td>
+<td style="text-align:center">非单词边界</td>
+</tr>
+</tbody>
+</table>
+<p>\b 单词边界 (\b并不匹配单词分隔字符中的任何一个，它只匹配一个位置：它的前一个字符和后一个字符不全是(一个是,一个不是或不存在)\w单词字符)<br>另外：多行匹配时，加上/m后“^”才可以匹配一行的开始，$也是。</p>
+<h4 id="量词（重复）"><a href="#量词（重复）" class="headerlink" title="量词（重复）"></a>量词（重复）</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">{n,m}</td>
+<td style="text-align:center">匹配前一项至少n次，但不超过m次</td>
+</tr>
+<tr>
+<td style="text-align:center">{n,}</td>
+<td style="text-align:center">匹配前一项n次到多次</td>
+</tr>
+<tr>
+<td style="text-align:center">{n}</td>
+<td style="text-align:center">匹配前一项n次</td>
+</tr>
+<tr>
+<td style="text-align:center">?</td>
+<td style="text-align:center">匹配前一项0次或1次，等价于{0,1}</td>
+</tr>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">匹配前一项1次或者多次，等价于{1,}</td>
+</tr>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">匹配前一项0次或多次，等价于{0,}</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">QQ号必须为5位到12位数字时，可以使用：^\d&#123;5,12&#125;$</div></pre></td></tr></table></figure>
+<p>贪婪模式：匹配重复字符是尽可能多地匹配。默认。<br>而非贪婪模式，只需要在量词后加上一个问号。</p>
+<h4 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h4><p>使用()分组，使量词作用于分组<br>1.使用|可以达到或的效果<br>2.反向引用<br>3.忽略分组<br>不希望捕获某些分组，只需要在分组内加上?:就可以，</p>
+<h4 id="零宽断言先行断言"><a href="#零宽断言先行断言" class="headerlink" title="零宽断言先行断言"></a>零宽断言先行断言</h4><ul>
+<li>(?=p)零宽正向先行断言<br>要求接下来的字符都与p匹配，但不能包括匹配p的那些字符。比如\b\w+(?=ing\b)，匹配以ing结尾的单词的前面部分(除了ing以外的部分)，如查找I’m singing while you’re studying.时，它会匹配sing和study。</li>
+<li>(?!p)零宽负向先行断言<br>要求接下来的字符不与p匹配</li>
+</ul>
+<h4 id="RegExp对象"><a href="#RegExp对象" class="headerlink" title="RegExp对象"></a>RegExp对象</h4><p>五个RegExp对象属性：global、multiline、ignoreCase、lastIndex、source</p>
+<ul>
+<li>lastIndex：当前表达式匹配内容的最后一个字符的下一个位置</li>
+<li>source：只读，正则表达式的文本字符串</li>
+</ul>
+<p>两个RegExp对象方法：</p>
+<ul>
+<li><p>RegExpObject.test(string)<br>test()方法用于检测一个字符串是否匹配某个模式.<br>如果字符串 string 中含有与 RegExpObject 匹配的文本，则返回 true，否则返回 false。</p>
+</li>
+<li><p>RegExpObject.exec(string)<br>exec()方法用于检索字符串中的正则表达式的匹配。<br>如果没有匹配返回null,否则返回一个结果数组。返回的数组具有两个属性：index和input。</p>
+<ul>
+<li>数组第一个元素包含的是与正则表达式相匹配的字符串</li>
+<li>余下的元素是与子表达式相匹配的字符串</li>
+<li>index声明匹配文本的其实字符在字符串的位置</li>
+<li>input声明对stringObject的引用</li>
+</ul>
+</li>
+</ul>
+<h4 id="用于模式匹配的String方法"><a href="#用于模式匹配的String方法" class="headerlink" title="用于模式匹配的String方法"></a>用于模式匹配的String方法</h4><ul>
+<li><p>stringObject.search(regexp)<br>search() 方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。<br>返回第一个匹配结果的index，查找不到返回-1<br>search()方法不支持全局检索，它将忽略修饰符g，并且总是从字符串的开始进行检索。</p>
+</li>
+<li><p>stringObject.match(regexp)<br>match()方法将检索字符串以找到一个或多个正则表达式的匹配。<br>返回一个由匹配结果组成的数组，该数组的内容依赖于 regexp 是否设置了修饰符g。</p>
+<ul>
+<li><p>没有设置g，非全局检索<br>它只执行一次匹配，如果没有找到任何的匹配文本，返回null<br>否则将返回一个数组，数组第一项存放的是完整的匹配，剩下的存放的是与子表达式相匹配的字符串。返回的数组具有两个属性：index和input（非全局检索与exec返回的一模一样）</p>
+</li>
+<li><p>设置了g，全局检索<br>没有找到返回null，找到返回一个数组包含字符串中所有匹配结果。没有index属性和input属性</p>
+</li>
+</ul>
+</li>
+<li><p>stringObject.split(regexp)<br>split() 方法用于把一个字符串分割成字符串数组。<br>返回一个字符串数组。</p>
+</li>
+<li><p>stringObject.replace(regexp, replacement)<br>replace()方法执行的是查找并替换的操作。<br>它将在 stringObject 中查找与 regexp 相匹配的子字符串，然后用 replacement 来替换这些子串。如果 regexp 具有全局标志 g，那么 replace() 方法将替换所有匹配的子串。否则，它只替换第一个匹配子串。<br>返回值一个新的字符串，是用 replacement 替换了 regexp 的第一次匹配或所有匹配之后得到的。</p>
+</li>
+</ul>
+<p>replacement 可以是字符串，也可以是函数。</p>
+<p>如果它是字符串，那么每个匹配都将由字符串替换。但是 replacement 中的 $ 字符具有特定的含义。它说明从模式匹配得到的字符串将用于替换。</p>
+<p>replacement是函数的情况，每个匹配都调用该函数，它返回的字符串将作为替换文本使用。该函数的第一个参数是匹配模式的字符串。接下来的参数是与模式中的子表达式匹配的字符串，可以有 0 个或多个这样的参数。接下来的参数是index，声明了匹配在 stringObject 中出现的位置。最后一个参数是 stringObject 本身。</p>
+<hr>
+<p>参考资料：<br>《JaveScript权威指南》<br><a href="https://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="external">《正则表达式30分钟入门教程》</a><br><a href="https://msdn.microsoft.com/zh-cn/library/hs600312.aspx" target="_blank" rel="external">微软的正则表达式教程</a><br>在线网站：<br><a href="https://regexper.com/" target="_blank" rel="external">正则表达式可视化工具</a><br><a href="http://regexr.com/" target="_blank" rel="external">正则表达式学习</a><br><a href="https://www.hackerrank.com/domains/regex/re-introduction" target="_blank" rel="external">正则表达式练习</a></p>
+<p>有没有发现我的MD语法进步了呢……</p>
 
       
 
@@ -184,7 +394,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
         		</li>
       		
 		</ul>
@@ -240,7 +450,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://wongyirong.github.io/2017/07/15/那些话儿/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://wongyirong.github.io/2017/07/27/010/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -254,18 +464,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/07/16/时间并不会把每个人带到同一个位置/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          时间并不会把每个人带到同一个位置
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/07/15/我的博客简介/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">我的博客简介</div>
+    <a href="/2017/07/26/009/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用node.js和mongoDB建站</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -385,7 +586,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -393,7 +594,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
             
             <div class="clearfix"></div>
