@@ -15,22 +15,18 @@
 <meta property="og:url" content="https://wongyirong.github.io/2017/07/19/008/index.html">
 <meta property="og:site_name" content="裙角飞扬">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;这应该是我开始学习前端之后看到的次数最多的一道面试题目，也是我最怕的一道题目了。计算机网络和硬件方面我还是个文盲，我对软件一直更感兴趣一点，对网络和硬件就比较心虚，寒暑假回家大爷大妈让我修电脑的时候，我只能无奈地一再强调自己是学软件的。为了更好地 为人民服务 学习前端，我准备从头到尾理清这道题，借此完成计算网络的攻坚克难战，顺便准备技术交流的素材。">
-<meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.jpg">
-<meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/TCP.jpg">
-<meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/IMG_4372.JPG">
+<meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B2.jpg">
+<meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/TCP%E9%80%9A%E4%BF%A1%E4%BC%A0%E8%BE%93%E6%B5%81.jpg">
+<meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/http%E8%AF%B7%E6%B1%82%E6%B5%81%E7%A8%8B.JPG">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87.png">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87.png">
-<meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/%E9%80%9A%E7%94%A8%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5.jpg">
-<meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/%E8%AF%B7%E6%B1%82%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5.jpg">
-<meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/%E5%93%8D%E5%BA%94%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5.jpg">
-<meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/%E5%AE%9E%E4%BD%93%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5.jpg">
-<meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/IMG_4387%2820170720-105758%29.jpg">
+<meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/%E6%B2%A1%E6%9C%89cookie.jpg">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93.png">
-<meta property="og:updated_time" content="2017-07-31T05:11:55.754Z">
+<meta property="og:updated_time" content="2017-07-31T11:49:12.508Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从输入URL到页面加载完成到底发生了什么？">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;这应该是我开始学习前端之后看到的次数最多的一道面试题目，也是我最怕的一道题目了。计算机网络和硬件方面我还是个文盲，我对软件一直更感兴趣一点，对网络和硬件就比较心虚，寒暑假回家大爷大妈让我修电脑的时候，我只能无奈地一再强调自己是学软件的。为了更好地 为人民服务 学习前端，我准备从头到尾理清这道题，借此完成计算网络的攻坚克难战，顺便准备技术交流的素材。">
-<meta name="twitter:image" content="http://ot4uwpond.bkt.clouddn.com/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.jpg">
+<meta name="twitter:image" content="http://ot4uwpond.bkt.clouddn.com/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B2.jpg">
   
   
     <link rel="icon" href="/images/favicon.png">
@@ -189,23 +185,380 @@
 <p>(2)负责域名解析的DNS服务 Domain Name System 应用层<br>DNS协议提供通过域名查找IP地址，或逆向从IP地址反查域名的服务<br>URL和DNS协议为我们标识了资源的地点，让我们知道去哪里请求需要的资源。</p>
 <h3 id="2-在传输过程中发生了什么"><a href="#2-在传输过程中发生了什么" class="headerlink" title="2.在传输过程中发生了什么"></a>2.在传输过程中发生了什么</h3><p>Web采用HTTP协议作为规范，完成从客户端到服务器端的通信。<br>HTTP协议 Hyper Text Transfer Protocol 超文本传输协议 应用层<br>HTTP协议基于TCP/IP协议族进行网络通信。其中包括：</p>
 <p>(1)负责传输的IP协议 Internet Protocol 网际协议 网络层<br>MAC地址 Media Acess Control Address<br>使用ARP协议进行通信</p>
-<p>(2)确保可靠性的TCP协议 Transmission Control Protocol 传输控制协议 传输层<br>为什么说它是确保可靠性的呢，TCP协议为了准确无误的将数据送达目标处采用了三次握手three-way-handshaking策略<br><img src="http://ot4uwpond.bkt.clouddn.com/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.jpg" alt=""><br><em>TCP 协议的三次握手 – 用以确认数据传输正确，会重试到完整地完成为止。</em></p>
-<h4 id="TCP-IP传输流："><a href="#TCP-IP传输流：" class="headerlink" title="TCP/IP传输流："></a>TCP/IP传输流：</h4><p><img src="http://ot4uwpond.bkt.clouddn.com/TCP.jpg" alt=""><br>作为发送端的客户端在应用层（HTTP协议）发出HTTP请求。为了传输方便在传输层（TCP协议）把从应用层处收到的数据（HTTP请求报文）进行分割，并在格格报文上打上标记序号及端口号后转发给网络层。在网络层（IP协议）增加作为通讯目的地的MAC地址后转发给数据链路层。<br>接收端的服务器在数据链路层接收到数据，发送到网络层传输层一直到应用层。这时候接收端的服务器才真正收到了了客户端的HTTP请求。<br><img src="http://ot4uwpond.bkt.clouddn.com/IMG_4372.JPG" alt=""></p>
+<p>(2)确保可靠性的TCP协议 Transmission Control Protocol 传输控制协议 传输层<br>为什么说它是确保可靠性的呢，TCP协议为了准确无误的将数据送达目标处采用了三次握手three-way-handshaking策略<br><img src="http://ot4uwpond.bkt.clouddn.com/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B2.jpg" alt=""><br><em>TCP 协议的三次握手 – 用以确认数据传输正确，会重试到完整地完成为止。</em></p>
+<h4 id="TCP-IP传输流："><a href="#TCP-IP传输流：" class="headerlink" title="TCP/IP传输流："></a>TCP/IP传输流：</h4><p><img src="http://ot4uwpond.bkt.clouddn.com/TCP%E9%80%9A%E4%BF%A1%E4%BC%A0%E8%BE%93%E6%B5%81.jpg" alt=""><br>作为发送端的客户端在应用层（HTTP协议）发出HTTP请求。为了传输方便在传输层（TCP协议）把从应用层处收到的数据（HTTP请求报文）进行分割，并在格格报文上打上标记序号及端口号后转发给网络层。在网络层（IP协议）增加作为通讯目的地的MAC地址后转发给数据链路层。<br>接收端的服务器在数据链路层接收到数据，发送到网络层传输层一直到应用层。这时候接收端的服务器才真正收到了了客户端的HTTP请求。<br><img src="http://ot4uwpond.bkt.clouddn.com/http%E8%AF%B7%E6%B1%82%E6%B5%81%E7%A8%8B.JPG" alt=""></p>
 <h4 id="HTTP请求由三部分组成，分别是：请求行、首部字段、报文主体"><a href="#HTTP请求由三部分组成，分别是：请求行、首部字段、报文主体" class="headerlink" title="HTTP请求由三部分组成，分别是：请求行、首部字段、报文主体"></a>HTTP请求由三部分组成，分别是：请求行、首部字段、报文主体</h4><p><img src="http://ot4uwpond.bkt.clouddn.com/%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87.png" alt=""><br>请求行以一个方法符号开头，以空格分开，后面跟着请求的URI和协议的版本，格式如下：Method Request-URI HTTP-Version CRLF<br>其中 Method表示请求方法；Request-URI是一个统一资源标识符；HTTP-Version表示请求的HTTP协议版本；CRLF表示回车和换行（除了作为结尾的CRLF外，不允许出现单独的CR或LF字符）。</p>
-<h4 id="请求方法有多种："><a href="#请求方法有多种：" class="headerlink" title="请求方法有多种："></a>请求方法有多种：</h4><p>GET     请求获取Request-URI所标识的资源<br>POST    在Request-URI所标识的资源后附加新的数据<br>HEAD    请求获取由Request-URI所标识的资源的响应消息报头<br>PUT     请求服务器存储一个资源，并用Request-URI作为其标识<br>DELETE  请求服务器删除Request-URI所标识的资源<br>TRACE   请求服务器回送收到的请求信息，主要用于测试或诊断<br>CONNECT 保留将来使用<br>OPTIONS 请求查询服务器的性能，或者查询与资源相关的选项和需求</p>
+<h4 id="请求方法有多种："><a href="#请求方法有多种：" class="headerlink" title="请求方法有多种："></a>请求方法有多种：</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">请求方法</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">GET</td>
+<td style="text-align:left">请求获取Request-URI所标识的资源</td>
+</tr>
+<tr>
+<td style="text-align:left">POST</td>
+<td style="text-align:left">在Request-URI所标识的资源后附加新的数据</td>
+</tr>
+<tr>
+<td style="text-align:left">HEAD</td>
+<td style="text-align:left">请求获取由Request-URI所标识的资源的响应消息报头</td>
+</tr>
+<tr>
+<td style="text-align:left">PUT</td>
+<td style="text-align:left">请求服务器存储一个资源，并用Request-URI作为其标识</td>
+</tr>
+<tr>
+<td style="text-align:left">DELETE</td>
+<td style="text-align:left">请求服务器删除Request-URI所标识的资源</td>
+</tr>
+<tr>
+<td style="text-align:left">TRACE</td>
+<td style="text-align:left">请求服务器回送收到的请求信息，主要用于测试或诊断</td>
+</tr>
+<tr>
+<td style="text-align:left">CONNECT</td>
+<td style="text-align:left">保留将来使用</td>
+</tr>
+<tr>
+<td style="text-align:left">OPTIONS</td>
+<td style="text-align:left">请求查询服务器的性能，或者查询与资源相关的选项和需求</td>
+</tr>
+</tbody>
+</table>
 <p>在html页面中输入URL、访问超链接、form提交（当然也可以设置method为POST）等都是GET请求方法，比如本题“从输入URL到页面加载完成到底发生了什么？”</p>
 <h4 id="GET和POST对比："><a href="#GET和POST对比：" class="headerlink" title="GET和POST对比："></a>GET和POST对比：</h4><p>GET：一般用于信息获取，使用URL传递参数，对所发送信息的数量也有限制，一般在2000个字符<br>POST：一般用于修改服务器上的资源，对所发送的信息没有限制。<br>GET方式需要使用Request.QueryString来取得变量的值，而POST方式通过Request.Form来获取变量的值，也就是说Get是通过地址栏来传值，而Post是通过提交表单来传值。<br>然而，在以下情况中，请使用 POST 请求：无法使用缓存文件（更新服务器上的文件或数据库）；向服务器发送大量数据（POST 没有数据量限制）；发送包含未知字符的用户输入时，POST比GET更稳定也更可靠。</p>
 <h4 id="HTTP响应也是由三个部分组成，分别是：状态行、首部字段、报文主体"><a href="#HTTP响应也是由三个部分组成，分别是：状态行、首部字段、报文主体" class="headerlink" title="HTTP响应也是由三个部分组成，分别是：状态行、首部字段、报文主体"></a>HTTP响应也是由三个部分组成，分别是：状态行、首部字段、报文主体</h4><p><img src="http://ot4uwpond.bkt.clouddn.com/%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87.png" alt=""><br>状态行格式：HTTP-Version Status-Code Reason-Phrase CRLF<br>其中，HTTP-Version表示服务器HTTP协议的版本；Status-Code表示服务器发回的响应状态代码；Reason-Phrase表示状态代码的文本描述。比如HTTP/1.1 200 OK</p>
-<p>响应状态代码有三位数字组成，第一个数字定义了响应的类别，且有五种可能取值：<br>1xx：指示信息–表示请求已接收，继续处理<br>2xx：成功–表示请求已被成功接收、理解、接受<br>3xx：重定向–要完成请求必须进行更进一步的操作<br>4xx：客户端错误–请求有语法错误或请求无法实现<br>5xx：服务器端错误–服务器未能实现合法的请求</p>
-<h4 id="常见状态代码、状态描述、说明："><a href="#常见状态代码、状态描述、说明：" class="headerlink" title="常见状态代码、状态描述、说明："></a>常见状态代码、状态描述、说明：</h4><p>200 OK  //客户端请求成功<br>400 Bad Request  //客户端请求有语法错误，不能被服务器所理解<br>401 Unauthorized //请求未经授权，这个状态代码必须和WWW-Authenticate报头域一起使用<br>403 Forbidden  //服务器收到请求，但是拒绝提供服务<br>404 Not Found  //请求资源不存在，eg：输入了错误的URL<br>500 Internal Server Error //服务器发生不可预期的错误<br>503 Server Unavailable  //服务器当前不能处理客户端的请求，一段时间后可能恢复正常</p>
+<p>响应状态代码有三位数字组成，第一个数字定义了响应的类别，且有五种可能取值：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">响应状态代码</th>
+<th style="text-align:left">状态描述</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1xx</td>
+<td style="text-align:left">指示信息</td>
+<td style="text-align:left">表示请求已接收，继续处理</td>
+</tr>
+<tr>
+<td style="text-align:left">2xx</td>
+<td style="text-align:left">成功</td>
+<td style="text-align:left">表示请求已被成功接收、理解、接受</td>
+</tr>
+<tr>
+<td style="text-align:left">3xx</td>
+<td style="text-align:left">重定向</td>
+<td style="text-align:left">要完成请求必须进行更进一步的操作</td>
+</tr>
+<tr>
+<td style="text-align:left">4xx</td>
+<td style="text-align:left">客户端错误</td>
+<td style="text-align:left">请求有语法错误或请求无法实现</td>
+</tr>
+<tr>
+<td style="text-align:left">5xx</td>
+<td style="text-align:left">服务器端错误</td>
+<td style="text-align:left">服务器未能实现合法的请求</td>
+</tr>
+</tbody>
+</table>
+<h4 id="常见状态代码、状态描述、说明："><a href="#常见状态代码、状态描述、说明：" class="headerlink" title="常见状态代码、状态描述、说明："></a>常见状态代码、状态描述、说明：</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">常见状态代码</th>
+<th style="text-align:left">状态描述</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">200</td>
+<td style="text-align:left">OK</td>
+<td style="text-align:left">客户端请求成功</td>
+</tr>
+<tr>
+<td style="text-align:left">400</td>
+<td style="text-align:left">Bad Request</td>
+<td style="text-align:left">客户端请求有语法错误，不能被服务器所理解</td>
+</tr>
+<tr>
+<td style="text-align:left">401</td>
+<td style="text-align:left">Unauthorized</td>
+<td style="text-align:left">请求未经授权，必须和WWW-Authenticate报头域一起使用</td>
+</tr>
+<tr>
+<td style="text-align:left">403</td>
+<td style="text-align:left">Forbidden</td>
+<td style="text-align:left">服务器收到请求，但是拒绝提供服务</td>
+</tr>
+<tr>
+<td style="text-align:left">404</td>
+<td style="text-align:left">Not Found</td>
+<td style="text-align:left">请求资源不存在，eg：输入了错误的URL</td>
+</tr>
+<tr>
+<td style="text-align:left">500</td>
+<td style="text-align:left">Internal Server Error</td>
+<td style="text-align:left">服务器发生不可预期的错误</td>
+</tr>
+<tr>
+<td style="text-align:left">503</td>
+<td style="text-align:left">Server Unavailable</td>
+<td style="text-align:left">服务器当前不能处理客户端的请求，一段时间后可能恢复正常</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p>从100到199范围的HTTP状态码是信息报告码。基于各种原因考虑，大多数情况下我们<br>是很少看见这些代码的。首先，如果一个浏览器尝试访问一个网站，而网站返回这些代码时，它们往往都不会显示在屏幕上。它们只是浏览器使引用的内部码。另<br>外，这些代码不常见的另外一个原因是起初HTTP标准不允许使用这一范围的状态码。就其本身而言，它们也一直没有被广泛地使用。</p>
 </blockquote>
-<h4 id="HTTP-1-1首部字段一览"><a href="#HTTP-1-1首部字段一览" class="headerlink" title="HTTP/1.1首部字段一览"></a>HTTP/1.1首部字段一览</h4><p>47种首部字段</p>
-<p><img src="http://ot4uwpond.bkt.clouddn.com/%E9%80%9A%E7%94%A8%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5.jpg" alt=""></p>
-<p><img src="http://ot4uwpond.bkt.clouddn.com/%E8%AF%B7%E6%B1%82%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5.jpg" alt=""></p>
-<p><img src="http://ot4uwpond.bkt.clouddn.com/%E5%93%8D%E5%BA%94%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5.jpg" alt=""></p>
-<p><img src="http://ot4uwpond.bkt.clouddn.com/%E5%AE%9E%E4%BD%93%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5.jpg" alt=""></p>
+<h4 id="HTTP-1-1首部字段"><a href="#HTTP-1-1首部字段" class="headerlink" title="HTTP/1.1首部字段"></a>HTTP/1.1首部字段</h4><ul>
+<li>通用首部字段</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">首部字段名</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Cache-Control</td>
+<td style="text-align:left">控制缓存的行为</td>
+</tr>
+<tr>
+<td style="text-align:left">Connection</td>
+<td style="text-align:left">逐跳首部、连接的管理</td>
+</tr>
+<tr>
+<td style="text-align:left">Date</td>
+<td style="text-align:left">创建报文的日期时间</td>
+</tr>
+<tr>
+<td style="text-align:left">Pragma</td>
+<td style="text-align:left">报文指令</td>
+</tr>
+<tr>
+<td style="text-align:left">Trailer</td>
+<td style="text-align:left">报文末端的首部一览</td>
+</tr>
+<tr>
+<td style="text-align:left">Transfer-Encoding</td>
+<td style="text-align:left">指定报文主体的传输编码方式</td>
+</tr>
+<tr>
+<td style="text-align:left">Upgrade</td>
+<td style="text-align:left">升级为其他协议</td>
+</tr>
+<tr>
+<td style="text-align:left">Via</td>
+<td style="text-align:left">代理服务器的相关信息</td>
+</tr>
+<tr>
+<td style="text-align:left">Warning</td>
+<td style="text-align:left">错误通知</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>请求首部字段</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">首部字段名</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Accept</td>
+<td style="text-align:left">用户代理可处理的媒体类型</td>
+</tr>
+<tr>
+<td style="text-align:left">Accept-Charset</td>
+<td style="text-align:left">优先的字符集</td>
+</tr>
+<tr>
+<td style="text-align:left">Accept-Encoding</td>
+<td style="text-align:left">优先的内容编码</td>
+</tr>
+<tr>
+<td style="text-align:left">Accept-Language</td>
+<td style="text-align:left">优先的语言（自然语言）</td>
+</tr>
+<tr>
+<td style="text-align:left">Authorization</td>
+<td style="text-align:left">Web认证信息</td>
+</tr>
+<tr>
+<td style="text-align:left">Expect</td>
+<td style="text-align:left">期待服务器的特定行为</td>
+</tr>
+<tr>
+<td style="text-align:left">From</td>
+<td style="text-align:left">用户的电子邮箱地址</td>
+</tr>
+<tr>
+<td style="text-align:left">Host</td>
+<td style="text-align:left">请求资源所在服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">if-Match</td>
+<td style="text-align:left">比较实体标记（ETag）</td>
+</tr>
+<tr>
+<td style="text-align:left">if-Modified-Since</td>
+<td style="text-align:left">比较资源的更新时间</td>
+</tr>
+<tr>
+<td style="text-align:left">if-None-Match</td>
+<td style="text-align:left">比较实体标记（与if-Match相反）</td>
+</tr>
+<tr>
+<td style="text-align:left">if-Range</td>
+<td style="text-align:left">资源未更新时发送实体Byte的范围请求</td>
+</tr>
+<tr>
+<td style="text-align:left">if-Unmodified-Since</td>
+<td style="text-align:left">比较资源的更新时间（与if-Modified-Since相反）</td>
+</tr>
+<tr>
+<td style="text-align:left">Max-Forwards</td>
+<td style="text-align:left">最大传输逐跳数</td>
+</tr>
+<tr>
+<td style="text-align:left">Proxy-Authorization</td>
+<td style="text-align:left">代理服务器要求客户端的认证信息</td>
+</tr>
+<tr>
+<td style="text-align:left">Range</td>
+<td style="text-align:left">实体的字节范围请求</td>
+</tr>
+<tr>
+<td style="text-align:left">Referer</td>
+<td style="text-align:left">对请求中URI的原始获取方法</td>
+</tr>
+<tr>
+<td style="text-align:left">TE</td>
+<td style="text-align:left">传输编码的优先级</td>
+</tr>
+<tr>
+<td style="text-align:left">User-Agent</td>
+<td style="text-align:left">HTTP客户端程序的信息</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应首部字段</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">首部字段名</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Accept-Ranges</td>
+<td style="text-align:left">是否接受字节范围请求</td>
+</tr>
+<tr>
+<td style="text-align:left">Age</td>
+<td style="text-align:left">推算资源创建经过时间</td>
+</tr>
+<tr>
+<td style="text-align:left">ETag</td>
+<td style="text-align:left">资源的匹配信息</td>
+</tr>
+<tr>
+<td style="text-align:left">Location</td>
+<td style="text-align:left">令客户端重定向至指定的URI</td>
+</tr>
+<tr>
+<td style="text-align:left">Proxy-Authenticate</td>
+<td style="text-align:left">代理服务器对客户端的认证信息</td>
+</tr>
+<tr>
+<td style="text-align:left">Reter-After</td>
+<td style="text-align:left">对再次发起请求的时机要求</td>
+</tr>
+<tr>
+<td style="text-align:left">Server</td>
+<td style="text-align:left">HTTP服务器的安装信息</td>
+</tr>
+<tr>
+<td style="text-align:left">Vary</td>
+<td style="text-align:left">代理服务器缓存的管理信息</td>
+</tr>
+<tr>
+<td style="text-align:left">WWW-Authenticate</td>
+<td style="text-align:left">服务器对客户端的认证信息</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>实体首部字段</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">首部字段名</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Allow</td>
+<td style="text-align:left">资源可支持的HTTP方法</td>
+</tr>
+<tr>
+<td style="text-align:left">Content-Encoding</td>
+<td style="text-align:left">实体主体的适用的编码方式</td>
+</tr>
+<tr>
+<td style="text-align:left">Content-Language</td>
+<td style="text-align:left">实体主体的自然语言</td>
+</tr>
+<tr>
+<td style="text-align:left">Content-Length</td>
+<td style="text-align:left">实体主体的大小（单位：字节）</td>
+</tr>
+<tr>
+<td style="text-align:left">Content-Location</td>
+<td style="text-align:left">替代对应资源的URI</td>
+</tr>
+<tr>
+<td style="text-align:left">Content-MD5</td>
+<td style="text-align:left">实体主体的报文摘要</td>
+</tr>
+<tr>
+<td style="text-align:left">Content-Range</td>
+<td style="text-align:left">实体主体的位置范围</td>
+</tr>
+<tr>
+<td style="text-align:left">Content-Type</td>
+<td style="text-align:left">实体主体的媒体类型</td>
+</tr>
+<tr>
+<td style="text-align:left">Expires</td>
+<td style="text-align:left">实体主体过期的日期时间</td>
+</tr>
+<tr>
+<td style="text-align:left">Last-Modified</td>
+<td style="text-align:left">资源的最后修改日期时间</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p>在这里同学问我Expires是缓存还是Cookie的失效时间。<br>Expires是将资源失效的日期告知客户端。源服务器不希望缓存服务器对资源缓存时会将Expires字段写入与首部字段Date相同的时间值，就像当时看到的百度的示例。但当同时存在Cache-control的max-age会优先处理max-age指令，忽略掉Expires。max-age代表资源保存为缓存的最长时间。</p>
 </blockquote>
@@ -213,7 +566,7 @@
 <blockquote>
 <p>这里我的同学帮我补充了一点：关于cookie的状态管理<br>HTTP是无状态协议，他不对之前发生过的请求和响应的状态进行管理。也就是说，无法根据之前的状态进行本次的请求处理。<br>cookie技术通过在请求和响应报文中写入Cookie信息来控制客户端的状态。Cookie会根据从服务器端发送的响应的报文内的一个叫做Set-Cookie的首部字段信息，通知客户端保存Cookie。当下次客户端再往该服务器发送请求时，客户端会自动在请求报文中加入Cookie值后发送出去。服务器端发现客户端发送过来的Cookie后，会去检查究竟是从哪一个客户端发来的连接请求，然后对比服务器上的记录，最后的到之前的状态信息。</p>
 </blockquote>
-<p><img src="http://ot4uwpond.bkt.clouddn.com/IMG_4387%2820170720-105758%29.jpg" alt=""></p>
+<p><img src="http://ot4uwpond.bkt.clouddn.com/%E6%B2%A1%E6%9C%89cookie.jpg" alt=""></p>
 <blockquote>
 <p>还有一种服务端的机制——Session。Session是保存在服务端的，有一个唯一标识。在服务端保存Session的方法很多，内存、数据库、文件都有。集群的时候也要考虑Session的转移，在大型的网站，一般会有专门的Session服务器集群，用来保存用户会话，这个时候 Session 信息都是放在内存的，使用一些缓存服务比如Redis之类的来放 Session。<br>区别：<br>Session是在服务端保存的一个数据结构，用来跟踪用户的状态，这个数据可以保存在集群、数据库、文件中；<br>Cookie是客户端保存用户信息的一种机制，用来记录用户的一些信息，也是实现Session的一种方式</p>
 </blockquote>
@@ -440,11 +793,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color4">碎碎念</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">碎碎念</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
