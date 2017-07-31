@@ -15,10 +15,12 @@
 <meta property="og:url" content="https://wongyirong.github.io/2017/07/27/010/index.html">
 <meta property="og:site_name" content="裙角飞扬">
 <meta property="og:description" content="早上我同学给我发了张截图，让我给她解释一下这段正则的含义。/^(?:([A-Za-z]+):)?(\/&amp;#123;0,3&amp;#125;)([0-9.\-A-Aa-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/ 刚开始看觉得好乱，但仔细看一下里面的语法都是熟悉的，我耐下心来，在笔记本画了下草图就感觉比较清晰了，这是一段匹配URL的正则表">
-<meta property="og:updated_time" content="2017-07-30T12:55:09.297Z">
+<meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/image.svg">
+<meta property="og:updated_time" content="2017-07-31T05:15:59.319Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一个问题引出的正则表达式总结">
 <meta name="twitter:description" content="早上我同学给我发了张截图，让我给她解释一下这段正则的含义。/^(?:([A-Za-z]+):)?(\/&amp;#123;0,3&amp;#125;)([0-9.\-A-Aa-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/ 刚开始看觉得好乱，但仔细看一下里面的语法都是熟悉的，我耐下心来，在笔记本画了下草图就感觉比较清晰了，这是一段匹配URL的正则表">
+<meta name="twitter:image" content="http://ot4uwpond.bkt.clouddn.com/image.svg">
   
   
     <link rel="icon" href="/images/favicon.png">
@@ -171,7 +173,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>早上我同学给我发了张截图，让我给她解释一下这段正则的含义。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">/^(?:([A-Za-z]+):)?(\/&#123;0,3&#125;)([0-9.\-A-Aa-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/</div></pre></td></tr></table></figure></p>
-<p>刚开始看觉得好乱，但仔细看一下里面的语法都是熟悉的，我耐下心来，在笔记本画了下草图就感觉比较清晰了，这是一段匹配URL的正则表达式文本。理清后觉得很有必要做一些整理归纳工作，加强对正则表达式的语法记忆，也为自己建立一个参考手册。</p>
+<p>刚开始看觉得好乱，但仔细看一下里面的语法都是熟悉的，我耐下心来，在笔记本画了下草图就感觉比较清晰了，这是一段匹配URL的正则表达式文本。理清后觉得很有必要做一些整理归纳工作，加强对正则表达式的语法记忆，也为自己建立一个参考手册。<br><a id="more"></a></p>
 <h3 id="regexp对象"><a href="#regexp对象" class="headerlink" title="regexp对象"></a>regexp对象</h3><p>JavaScript内置对象RegExp<br>实例化有两种方式：<br>1.字面量<br>var reg1 = /\bbaidu\b/g;<br>2.构造函数：<br>var reg2 = new RegExp(“\bbaidu\b”, “g”);</p>
 <h4 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h4><p>g:global 全文搜索 不加g默认找到第一个匹配就停止<br>i:ignore case 忽略大小写 默认是大小写敏感<br>m:multiple lines 多行搜索</p>
 <h4 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h4><p>正则表达式由两种基本字符类型组成：</p>
@@ -337,7 +339,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">QQ号必须为5位到12位数字时，可以使用：^\d&#123;5,12&#125;$</div></pre></td></tr></table></figure>
 <p>贪婪模式：匹配重复字符是尽可能多地匹配。默认。<br>而非贪婪模式，只需要在量词后加上一个问号。</p>
 <h4 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h4><p>使用()分组，使量词作用于分组<br>1.使用|可以达到或的效果<br>2.反向引用<br>3.忽略分组<br>不希望捕获某些分组，只需要在分组内加上?:就可以，</p>
-<h4 id="零宽断言先行断言"><a href="#零宽断言先行断言" class="headerlink" title="零宽断言先行断言"></a>零宽断言先行断言</h4><ul>
+<h4 id="零宽先行断言"><a href="#零宽先行断言" class="headerlink" title="零宽先行断言"></a>零宽先行断言</h4><ul>
 <li>(?=p)零宽正向先行断言<br>要求接下来的字符都与p匹配，但不能包括匹配p的那些字符。比如\b\w+(?=ing\b)，匹配以ing结尾的单词的前面部分(除了ing以外的部分)，如查找I’m singing while you’re studying.时，它会匹配sing和study。</li>
 <li>(?!p)零宽负向先行断言<br>要求接下来的字符不与p匹配</li>
 </ul>
@@ -378,8 +380,9 @@
 <p>replacement 可以是字符串，也可以是函数。</p>
 <p>如果它是字符串，那么每个匹配都将由字符串替换。但是 replacement 中的 $ 字符具有特定的含义。它说明从模式匹配得到的字符串将用于替换。</p>
 <p>replacement是函数的情况，每个匹配都调用该函数，它返回的字符串将作为替换文本使用。该函数的第一个参数是匹配模式的字符串。接下来的参数是与模式中的子表达式匹配的字符串，可以有 0 个或多个这样的参数。接下来的参数是index，声明了匹配在 stringObject 中出现的位置。最后一个参数是 stringObject 本身。</p>
+<p>最后让你门再回到最开始的问题，看着这张可视化工具生成的图，再次回忆一下语法。<br><img src="http://ot4uwpond.bkt.clouddn.com/image.svg" alt="正则可视化"><br>是不是很容易理解了。</p>
 <hr>
-<p>参考资料：<br>《JaveScript权威指南》<br><a href="https://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="external">《正则表达式30分钟入门教程》</a><br><a href="https://msdn.microsoft.com/zh-cn/library/hs600312.aspx" target="_blank" rel="external">微软的正则表达式教程</a><br>在线网站：<br><a href="https://regexper.com/" target="_blank" rel="external">正则表达式可视化工具</a><br><a href="http://regexr.com/" target="_blank" rel="external">正则表达式学习</a><br><a href="https://www.hackerrank.com/domains/regex/re-introduction" target="_blank" rel="external">正则表达式练习</a></p>
+<p>参考资料：<br>《JaveScript权威指南》<br><a href="https://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="external">《正则表达式30分钟入门教程》</a><br><a href="https://msdn.microsoft.com/zh-cn/library/hs600312.aspx" target="_blank" rel="external">《微软的正则表达式教程》</a><br>在线网站：<br><a href="https://regexper.com/" target="_blank" rel="external">正则表达式可视化工具</a><br><a href="http://regexr.com/" target="_blank" rel="external">正则表达式学习</a><br><a href="https://www.hackerrank.com/domains/regex/re-introduction" target="_blank" rel="external">正则表达式练习</a></p>
 <p>有没有发现我的MD语法进步了呢……</p>
 
       
