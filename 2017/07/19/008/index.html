@@ -23,7 +23,7 @@
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87.png">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/%E6%B2%A1%E6%9C%89cookie.jpg">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93.png">
-<meta property="og:updated_time" content="2017-07-31T12:50:16.000Z">
+<meta property="og:updated_time" content="2017-08-02T02:17:21.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从输入URL到页面加载完成到底发生了什么？">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;这应该是我开始学习前端之后看到的次数最多的一道面试题目，也是我最怕的一道题目了。计算机网络和硬件方面我还是个文盲，我对软件一直更感兴趣一点，对网络和硬件就比较心虚，寒暑假回家大爷大妈让我修电脑的时候，我只能无奈地一再强调自己是学软件的。为了更好地 为人民服务 学习前端，我准备从头到尾理清这道题，借此完成计算网络的攻坚克难战，顺便准备技术交流的素材。">
@@ -182,8 +182,11 @@
         <p><img src="http://ot4uwpond.bkt.clouddn.com/complex_url.png" alt=""></p>
 <p>&emsp;&emsp;这应该是我开始学习前端之后看到的次数最多的一道面试题目，也是我最怕的一道题目了。计算机网络和硬件方面我还是个文盲，我对软件一直更感兴趣一点，对网络和硬件就比较心虚，寒暑假回家大爷大妈让我修电脑的时候，我只能无奈地一再强调自己是学软件的。为了更好地 <del>为人民服务</del> 学习前端，我准备从头到尾理清这道题，借此完成计算网络的攻坚克难战，顺便准备技术交流的素材。<br><a id="more"></a><br>&emsp;&emsp;在我最开始的意识里，这个过程应该是在浏览器地址栏输入URL之后信息被送到了某处，然后获得回复，内容按照一定格式(前端要做的工作)展示在Web页面上。而事实上在电脑显示器后面在这短短的时间(网速好的话)内有太多看不到的过程发生了。</p>
 <h3 id="1-输入URL后浏览器做了什么"><a href="#1-输入URL后浏览器做了什么" class="headerlink" title="1.输入URL后浏览器做了什么"></a>1.输入URL后浏览器做了什么</h3><p>我们先来理解一下URL是什么，它为我们做了什么</p>
-<p>(1)URL Uniform Resource Locator 统一资源定位符<br>URI（Uniform Resource Identifier) 统一资源标识符<br>URI用字符串标识某一互联网资源，而URL表示资源的地点（互联网上所处的位置），URL是URI的子集。<br>基本URL包含协议方案名、服务器名称（或IP地址）、文件路径，比如</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">https://wongyirong.github.io/2017/07/19/从输入URL到页面展示到底发生了什么/</div></pre></td></tr></table></figure>
+<p>(1)URL Uniform Resource Locator 统一资源定位符<br>URI（Uniform Resource Identifier) 统一资源标识符<br>URI用字符串标识某一互联网资源，而URL表示资源的地点（互联网上所处的位置），URL是URI的子集。<br>URL的一般格式为(带方括号[]的为可选项)：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">protocol :// hostname[:port] / path / [;parameters][?query]#fragment</div></pre></td></tr></table></figure></p>
+<p>　　URL由三部分组成：协议类型，主机名和路径及文件名。通过URL可以指定的主要有以下几种：http、ftp、gopher、telnet、file等。<br>　　1、protocol（协议）：指定使用的传输协议<br>　　file 资源是本地计算机上的文件。格式file://<br>　　ftp 通过 FTP访问资源。格式 FTP://<br>　　http 通过 HTTP 访问该资源。格式 HTTP://<br>　　https 通过安全的 HTTPS 访问该资源。格式 HTTPS://<br>　　mailto 资源为电子邮件地址，通过 SMTP 访问。格式 mailto:<br>　　2、hostname（主机名）：是指存放资源的服务器的域名系统 (DNS) 主机名或 IP 地址。有时，在主机名前也可以包含连接到服务器所需的用户名和密码（格式：username:password）。<br>　　3、port（端口号）：整数，可选，省略时使用方案的默认端口，各种传输协议都有默认的端口号，如http的默认端口为80。如果输入时省略，则使用默认端口号。有时候出于安全或其他考虑，可以在服务器上对端口进行重定义，即采用非标准端口号，此时，URL中就不能省略端口号这一项。<br>　　4、path（路径）：由零或多个“/”符号隔开的字符串，一般用来表示主机上的一个目录或文件地址。<br>　　5、;parameters（参数）：这是用于指定特殊参数的可选项。<br>　　6、?query(查询)：可选，用于传递参数，可有多个参数，用“&amp;”符号隔开，每个参数的名和值用“=”符号隔开。<br>　　7、fragment，代表了资源内的一个位置。</p>
+<blockquote>
+<p>在 URI 的末尾通过 hash mark（#）作为 fragment 的开头，其中#不属于 fragment 的值。<br>1.#有别于?。?后面的查询字符串会被网络请求带上服务器，而 fragment 不会被发送的服务器；<br>2.fragment 的改变不会触发浏览器刷新页面，但是会生成浏览历史（对IE 6和IE 7不成立）；<br>3.fragment 会被浏览器根据文件媒体类型（MIME type）进行对应的处理；<br>4.Google 的搜索引擎会忽略 # 及其后面的字符串。如果希望Ajax生成的内容被浏览引擎读取，可以使用”#!”<br>5.JS中可以通过window.location.hash来读取或改变＃的值</p>
+</blockquote>
 <p>(2)负责域名解析的DNS服务 Domain Name System 应用层<br>DNS协议提供通过域名查找IP地址，或逆向从IP地址反查域名的服务<br>URL和DNS协议为我们标识了资源的地点，让我们知道去哪里请求需要的资源。</p>
 <h3 id="2-在传输过程中发生了什么"><a href="#2-在传输过程中发生了什么" class="headerlink" title="2.在传输过程中发生了什么"></a>2.在传输过程中发生了什么</h3><p>Web采用HTTP协议作为规范，完成从客户端到服务器端的通信。<br>HTTP协议 Hyper Text Transfer Protocol 超文本传输协议 应用层<br>HTTP协议基于TCP/IP协议族进行网络通信。其中包括：</p>
 <p>(1)负责传输的IP协议 Internet Protocol 网际协议 网络层<br>MAC地址 Media Acess Control Address<br>使用ARP协议进行通信</p>
@@ -576,7 +579,7 @@
 <blockquote>
 <p>注意：渲染结束后，JavaScript下载后JS操作修改DOM、修改样式都会造成渲染树的重新布局和重绘。只要修改DOM或修改了元素的形状或大小，就会触发Reflow，单纯修改元素的颜色只需Repaint一下。</p>
 </blockquote>
-<p>参考资料：<br>《图解http》<br>腾讯IMWeb知乎专栏<br>what-happens-when</p>
+<p>参考资料：<br>《图解http》<br>腾讯IMWeb知乎专栏<br>what-happens-when<br>6 Things You Should Know About Fragment URLs</p>
 
       
 
@@ -795,11 +798,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>

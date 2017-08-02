@@ -17,7 +17,7 @@
 <meta property="og:description" content="早上我同学给我发了张截图，让我给她解释一下这段正则的含义。/^(?:([A-Za-z]+):)?(\/&amp;#123;0,3&amp;#125;)([0-9.\-A-Aa-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/ 刚开始看觉得好乱，但仔细看一下里面的语法都是熟悉的，我耐下心来，在笔记本画了下草图就感觉比较清晰了，这是一段匹配URL的正则表">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/regexp.png">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/image.svg">
-<meta property="og:updated_time" content="2017-07-31T14:19:57.578Z">
+<meta property="og:updated_time" content="2017-08-01T07:00:01.994Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一个问题引出的正则表达式总结">
 <meta name="twitter:description" content="早上我同学给我发了张截图，让我给她解释一下这段正则的含义。/^(?:([A-Za-z]+):)?(\/&amp;#123;0,3&amp;#125;)([0-9.\-A-Aa-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/ 刚开始看觉得好乱，但仔细看一下里面的语法都是熟悉的，我耐下心来，在笔记本画了下草图就感觉比较清晰了，这是一段匹配URL的正则表">
@@ -328,7 +328,7 @@
 </tbody>
 </table>
 <p>贪婪模式：匹配重复字符是尽可能多地匹配。默认。<br>而非贪婪模式，只需要在量词后加上一个问号。</p>
-<h4 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h4><p>使用()分组，使量词作用于分组<br>1.使用|可以达到或的效果<br>2.反向引用<br>3.忽略分组<br>不希望捕获某些分组，只需要在分组内加上?:就可以，</p>
+<h4 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h4><p>使用()分组，使量词作用于分组<br>默认情况下，每个分组会自动拥有一个组号，规则是：从左向右，以分组的左括号为标志，第一个出现的分组的组号为1，第二个为2，以此类推。<br>1.使用|可以达到或的效果<br>2.后向引用<br>后向引用用于重复搜索前面某个分组匹配的文本。例如，\1代表分组1匹配的文本。<br>3.忽略分组<br>不希望捕获某些分组，只需要在分组内加上?:就可以</p>
 <h4 id="零宽先行断言"><a href="#零宽先行断言" class="headerlink" title="零宽先行断言"></a>零宽先行断言</h4><p>1.(?=p)零宽正向先行断言<br>要求接下来的字符都与p匹配，但不能包括匹配p的那些字符。比如\b\w+(?=ing\b)，匹配以ing结尾的单词的前面部分(除了ing以外的部分)，如查找I’m singing while you’re studying.时，它会匹配sing和study。<br>2.(?!p)零宽负向先行断言<br>要求接下来的字符不与p匹配</p>
 <h4 id="RegExp对象"><a href="#RegExp对象" class="headerlink" title="RegExp对象"></a>RegExp对象</h4><p>1.五个RegExp对象属性：global、multiline、ignoreCase、lastIndex、source<br>(1)lastIndex：当前表达式匹配内容的最后一个字符的下一个位置<br>(2)source：只读，正则表达式的文本字符串<br>2.两个RegExp对象方法：<br>(1)RegExpObject.test(string)<br>test()方法用于检测一个字符串是否匹配某个模式.<br>如果字符串 string 中含有与 RegExpObject 匹配的文本，则返回 true，否则返回 false。<br>(2)RegExpObject.exec(string)<br>exec()方法用于检索字符串中的正则表达式的匹配。<br>如果没有匹配返回null,否则返回一个结果数组。返回的数组具有两个属性：index和input。<br>&emsp;1)数组第一个元素包含的是与正则表达式相匹配的字符串<br>&emsp;2)余下的元素是与子表达式相匹配的字符串<br>&emsp;3)index声明匹配文本的其实字符在字符串的位置<br>&emsp;4)input声明对stringObject的引用</p>
 <h4 id="用于模式匹配的String方法"><a href="#用于模式匹配的String方法" class="headerlink" title="用于模式匹配的String方法"></a>用于模式匹配的String方法</h4><p>1.stringObject.search(regexp)<br>search() 方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。<br>返回第一个匹配结果的index，查找不到返回-1<br>search()方法不支持全局检索，它将忽略修饰符g，并且总是从字符串的开始进行检索。</p>
@@ -426,7 +426,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          是Ajax啊
+          JavaScript 错误 - Throw、Try 和 Catch
         
       </div>
     </a>
@@ -557,11 +557,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
