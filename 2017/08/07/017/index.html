@@ -8,20 +8,21 @@
   <link rel="dns-prefetch" href="https://wongyirong.github.io">
   <title>到底什么是标准和怪异 | 裙角飞扬</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在标准模式下，一个块的总宽度=width+margin(左右)+padding(左右)+border(左右)在怪异模式下，一个块的总宽度=width+margin（左右）（既width已经包含了padding和border值）.con_box&amp;#123;    box-sizing: content-box;    width: 100px;    height: 100px;    paddin">
+  <meta name="description" content="在标准模式下，一个块的总宽度=width+margin(左右)+padding(左右)+border(左右)在怪异模式下，一个块的总宽度=width+margin（左右）（既width已经包含了padding和border值）">
 <meta name="keywords" content="学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="到底什么是标准和怪异">
 <meta property="og:url" content="https://wongyirong.github.io/2017/08/07/017/index.html">
 <meta property="og:site_name" content="裙角飞扬">
-<meta property="og:description" content="在标准模式下，一个块的总宽度=width+margin(左右)+padding(左右)+border(左右)在怪异模式下，一个块的总宽度=width+margin（左右）（既width已经包含了padding和border值）.con_box&amp;#123;    box-sizing: content-box;    width: 100px;    height: 100px;    paddin">
+<meta property="og:description" content="在标准模式下，一个块的总宽度=width+margin(左右)+padding(左右)+border(左右)在怪异模式下，一个块的总宽度=width+margin（左右）（既width已经包含了padding和border值）">
+<meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/box.jpg">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/con.png">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/ie.png">
-<meta property="og:updated_time" content="2017-08-07T03:18:51.098Z">
+<meta property="og:updated_time" content="2017-08-07T04:24:18.874Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="到底什么是标准和怪异">
-<meta name="twitter:description" content="在标准模式下，一个块的总宽度=width+margin(左右)+padding(左右)+border(左右)在怪异模式下，一个块的总宽度=width+margin（左右）（既width已经包含了padding和border值）.con_box&amp;#123;    box-sizing: content-box;    width: 100px;    height: 100px;    paddin">
-<meta name="twitter:image" content="http://ot4uwpond.bkt.clouddn.com/con.png">
+<meta name="twitter:description" content="在标准模式下，一个块的总宽度=width+margin(左右)+padding(左右)+border(左右)在怪异模式下，一个块的总宽度=width+margin（左右）（既width已经包含了padding和border值）">
+<meta name="twitter:image" content="http://ot4uwpond.bkt.clouddn.com/box.jpg">
   
   
     <link rel="icon" href="/images/favicon.png">
@@ -173,7 +174,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在标准模式下，一个块的总宽度=width+margin(左右)+padding(左右)+border(左右)<br>在怪异模式下，一个块的总宽度=width+margin（左右）（既width已经包含了padding和border值）<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">.con_box&#123;</div><div class="line">    box-sizing: content-box;</div><div class="line">    width: 100px;</div><div class="line">    height: 100px;</div><div class="line">    padding: 10px;</div><div class="line">    margin: 50px;</div><div class="line">    border: 10px solid green;</div><div class="line">    background: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p><img src="http://ot4uwpond.bkt.clouddn.com/box.jpg" alt=""><br>在标准模式下，一个块的总宽度=width+margin(左右)+padding(左右)+border(左右)<br>在怪异模式下，一个块的总宽度=width+margin（左右）（既width已经包含了padding和border值）</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">.con_box&#123;</div><div class="line">    box-sizing: content-box;</div><div class="line">    width: 100px;</div><div class="line">    height: 100px;</div><div class="line">    padding: 10px;</div><div class="line">    margin: 50px;</div><div class="line">    border: 10px solid green;</div><div class="line">    background: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="https://wongyirong.github.io/Demo/boxDemo/content-box.html">在线演示</a><br>截图：<br><img src="http://ot4uwpond.bkt.clouddn.com/con.png" alt=""><br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">.ie_box&#123;</div><div class="line">    box-sizing: border-box;</div><div class="line">    width: 100px;</div><div class="line">    height: 100px;</div><div class="line">    border: 10px solid green;</div><div class="line">    padding: 10px;</div><div class="line">    margin: 50px;</div><div class="line">    background: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><a href="https://wongyirong.github.io/Demo/boxDemo/ie-box.html">在线演示</a><br>截图：<br><img src="http://ot4uwpond.bkt.clouddn.com/ie.png" alt=""></p>
 
@@ -385,11 +388,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color4">碎碎念</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">碎碎念</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
