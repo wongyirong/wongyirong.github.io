@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="https://wongyirong.github.io">
   <title>十大排序算法【转】 | 裙角飞扬</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="原文来自sorts 排序算法说明（1）排序的定义：对一序列对象根据某个关键字进行排序； 输入：n个数：a1,a2,a3,…,an输出：n个数的排列:a1’,a2’,a3’,…,an’，使得a1’&amp;lt;=a2’&amp;lt;=a3’&amp;lt;=…&amp;lt;=an’。 再讲的形象点就是排排坐，调座位，高的站在后面，矮的站在前面咯。 （2）对于评述算法优劣术语的说明 稳定：如果a原本在b前面，而a=b，排序之后">
+  <meta name="description" content="原文来自Damonare的个人博客 排序算法说明（1）排序的定义：对一序列对象根据某个关键字进行排序； 输入：n个数：a1,a2,a3,…,an输出：n个数的排列:a1’,a2’,a3’,…,an’，使得a1’&amp;lt;=a2’&amp;lt;=a3’&amp;lt;=…&amp;lt;=an’。 （2）对于评述算法优劣术语的说明 稳定：如果a原本在b前面，而a=b，排序之后a仍然在b的前面；不稳定：如果a原本在b的前面，">
 <meta name="keywords" content="学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="十大排序算法【转】">
 <meta property="og:url" content="https://wongyirong.github.io/2017/08/09/020/index.html">
 <meta property="og:site_name" content="裙角飞扬">
-<meta property="og:description" content="原文来自sorts 排序算法说明（1）排序的定义：对一序列对象根据某个关键字进行排序； 输入：n个数：a1,a2,a3,…,an输出：n个数的排列:a1’,a2’,a3’,…,an’，使得a1’&amp;lt;=a2’&amp;lt;=a3’&amp;lt;=…&amp;lt;=an’。 再讲的形象点就是排排坐，调座位，高的站在后面，矮的站在前面咯。 （2）对于评述算法优劣术语的说明 稳定：如果a原本在b前面，而a=b，排序之后">
+<meta property="og:description" content="原文来自Damonare的个人博客 排序算法说明（1）排序的定义：对一序列对象根据某个关键字进行排序； 输入：n个数：a1,a2,a3,…,an输出：n个数的排列:a1’,a2’,a3’,…,an’，使得a1’&amp;lt;=a2’&amp;lt;=a3’&amp;lt;=…&amp;lt;=an’。 （2）对于评述算法优劣术语的说明 稳定：如果a原本在b前面，而a=b，排序之后a仍然在b的前面；不稳定：如果a原本在b的前面，">
 <meta property="og:image" content="http://img.blog.csdn.net/20160916153212716">
 <meta property="og:image" content="http://img.blog.csdn.net/20160916154036887">
 <meta property="og:image" content="http://img.blog.csdn.net/20160916163126374">
@@ -29,10 +29,10 @@
 <meta property="og:image" content="http://img.blog.csdn.net/20160917110641479">
 <meta property="og:image" content="http://img.blog.csdn.net/20160917111945979">
 <meta property="og:image" content="http://img.blog.csdn.net/20160917123313659">
-<meta property="og:updated_time" content="2017-08-09T07:30:30.431Z">
+<meta property="og:updated_time" content="2017-08-09T07:49:56.203Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="十大排序算法【转】">
-<meta name="twitter:description" content="原文来自sorts 排序算法说明（1）排序的定义：对一序列对象根据某个关键字进行排序； 输入：n个数：a1,a2,a3,…,an输出：n个数的排列:a1’,a2’,a3’,…,an’，使得a1’&amp;lt;=a2’&amp;lt;=a3’&amp;lt;=…&amp;lt;=an’。 再讲的形象点就是排排坐，调座位，高的站在后面，矮的站在前面咯。 （2）对于评述算法优劣术语的说明 稳定：如果a原本在b前面，而a=b，排序之后">
+<meta name="twitter:description" content="原文来自Damonare的个人博客 排序算法说明（1）排序的定义：对一序列对象根据某个关键字进行排序； 输入：n个数：a1,a2,a3,…,an输出：n个数的排列:a1’,a2’,a3’,…,an’，使得a1’&amp;lt;=a2’&amp;lt;=a3’&amp;lt;=…&amp;lt;=an’。 （2）对于评述算法优劣术语的说明 稳定：如果a原本在b前面，而a=b，排序之后a仍然在b的前面；不稳定：如果a原本在b的前面，">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20160916153212716">
   
   
@@ -66,7 +66,7 @@
 		  <h1 class="header-author"><a href="/">裙角飞扬</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">易燃易爆炸，气质不稳定</p>
+		<p class="header-subtitle">迷茫的时候，选难走的路</p>
 		
 
 		<nav class="header-menu">
@@ -122,7 +122,7 @@
 			  <h1 class="header-author js-header-author">裙角飞扬</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>易燃易爆炸，气质不稳定<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>迷茫的时候，选难走的路<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -185,16 +185,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>原文来自<a href="https://github.com/wongyirong/Sorts" target="_blank" rel="external">sorts</a></p>
+        <p>原文来自<a href="http://blog.damonare.cn" target="_blank" rel="external">Damonare的个人博客</a></p>
 <h3 id="排序算法说明"><a href="#排序算法说明" class="headerlink" title="排序算法说明"></a>排序算法说明</h3><p><strong>（1）排序的定义：对一序列对象根据某个关键字进行排序；</strong></p>
 <p>输入：n个数：a1,a2,a3,…,an<br>输出：n个数的排列:a1’,a2’,a3’,…,an’，使得a1’&lt;=a2’&lt;=a3’&lt;=…&lt;=an’。</p>
-<p>再讲的形象点就是排排坐，调座位，高的站在后面，矮的站在前面咯。</p>
 <p><strong>（2）对于评述算法优劣术语的说明</strong></p>
 <p><strong>稳定</strong>：如果a原本在b前面，而a=b，排序之后a仍然在b的前面；<br><strong>不稳定</strong>：如果a原本在b的前面，而a=b，排序之后a可能会出现在b的后面；</p>
 <p><strong>内排序</strong>：所有排序操作都在内存中完成；<br><strong>外排序</strong>：由于数据太大，因此把数据放在磁盘中，而排序通过磁盘和内存的数据传输才能进行；</p>
 <p><strong>时间复杂度</strong>: 一个算法执行所耗费的时间。<br><strong>空间复杂度</strong>: 运行完一个程序所需内存的大小。</p>
-<p>关于时间空间复杂度的更多了解请戳<a href="http://blog.csdn.net/booirror/article/details/7707551/" target="_blank" rel="external">这里</a>，或是看《大话数据结构》，通俗易懂。</p>
-<p><strong>（3）排序算法图片总结 (图片来源于网络):</strong></p>
+<p>关于时间空间复杂度的更多了解请戳<a href="http://blog.csdn.net/booirror/article/details/7707551/" target="_blank" rel="external">这里</a>，或是看《大话数据结构》，通俗易懂。<br><a id="more"></a><br><strong>（3）排序算法图片总结 (图片来源于网络):</strong></p>
 <p>排序对比：</p>
 <p><img src="http://img.blog.csdn.net/20160916153212716" alt="这里写图片描述"></p>
 <p><strong>图片名词解释：</strong><br>n: 数据规模<br>k:“桶”的个数<br>In-place: 占用常数内存，不占用额外内存<br>Out-place: 占用额外内存</p>
@@ -673,11 +671,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">碎碎念</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color4">碎碎念</a>
               </li>
              
               <li class="article-tag-list-item">
