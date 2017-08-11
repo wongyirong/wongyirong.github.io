@@ -16,7 +16,6 @@
 <meta property="og:site_name" content="裙角飞扬">
 <meta property="og:description" content="1、什么是DOM? DOM，文档对象模型（Document Object Model）。DOM是 W3C（万维网联盟）的标准，DOM定义了访问HTML和XML文档的标准。在W3C的标准中，DOM是独于平台和语言的接口，它允许程序和脚本动态地访问和更新文档的内容、结构和样式。">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/dom_logo.png">
-<meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/2-1.png">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/3-2.jpg">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/3-3-1.jpg">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/3-3-2.jpg">
@@ -25,7 +24,7 @@
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/6-1.jpg">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/7-1.jpg">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/webkitflow.png">
-<meta property="og:updated_time" content="2017-08-11T01:50:37.055Z">
+<meta property="og:updated_time" content="2017-08-11T02:07:26.035Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DOM">
 <meta name="twitter:description" content="1、什么是DOM? DOM，文档对象模型（Document Object Model）。DOM是 W3C（万维网联盟）的标准，DOM定义了访问HTML和XML文档的标准。在W3C的标准中，DOM是独于平台和语言的接口，它允许程序和脚本动态地访问和更新文档的内容、结构和样式。">
@@ -190,74 +189,51 @@
 <blockquote>
 <p>核心DOM 针对任何结构化文档的标准模型<br>XML DOM 针对XML文档的标准模型<br>HTML DOM  针对HTML文档的标准模型</p>
 </blockquote>
-<h3 id="2、DOM的作用"><a href="#2、DOM的作用" class="headerlink" title="2、DOM的作用"></a>2、DOM的作用</h3><p>网页由HTML来搭建结构，通过css来定义网页的样式，JavaScript赋予了页面的行为，同时我们可以通过JavaScript与页面进行交互，实现页面的动画效果等。<br>而JavaScript是通过ECMAScript标准编写程序让浏览器来解析，利用ECMAScript，我们可以通过BOM对象（即browser object model）来操作浏览器窗口、浏览器导航对象(navigator)、屏幕分辨率(screen)、浏览器历史(history)、cookie等等。要实现页面的动态交互和效果，操作HTML才是核心。DOM给我们提供了用程序来动态控制HTML的接口，也就是早期的DHTML的概念。DOM处在javascript赋予HTML具备动态交互和效果的能力的核心地位上。<br><img src="http://ot4uwpond.bkt.clouddn.com/2-1.png" alt=""></p>
-<h3 id="3、DOM0、DOM1、DOM2、DOM3的区别"><a href="#3、DOM0、DOM1、DOM2、DOM3的区别" class="headerlink" title="3、DOM0、DOM1、DOM2、DOM3的区别"></a>3、DOM0、DOM1、DOM2、DOM3的区别</h3><p><strong>3.1、DOM0与DHTML</strong></p>
+<h3 id="2、DOM0、DOM1、DOM2、DOM3的区别"><a href="#2、DOM0、DOM1、DOM2、DOM3的区别" class="headerlink" title="2、DOM0、DOM1、DOM2、DOM3的区别"></a>2、DOM0、DOM1、DOM2、DOM3的区别</h3><p><strong>2.1、DOM0与DHTML</strong></p>
 <p>DHTML是Dynamic HTML（动态HTML）的简称。DHTML并不是一项新技术，而是将HTML、CSS、JavaScript技术组合的一种描述。即：</p>
 <blockquote>
 <p>利用HTML把网页标记为各种元素<br>利用CSS设置元素样式及其显示位置<br>利用JavaScript操控页面元素和样式</p>
-<p>利用DHTML，看起来可以很容易的控制页面元素，并实现一些原本很复杂的效果（如：通过改变元素位置实现动画）。但事实并非如此，因为没有规范和标准，浏览器对相同功能的实现完全不一样。为了保持程序的兼容性，程序员必须写一些探查代码以检测JavaScript是运行于哪种浏览器之下，并提供与之对应的脚本。</p>
 </blockquote>
 <p>我们在阅读DOM标准的时候，经常会看到DOM0级这样的字眼，实际上DOM0级这个标准是不存在的。所谓DOM0级只是DOM历史坐标系中的一个参照点而已，具体地说DOM0级就是指IE4.0和Netscape navigator4.0最初支持的那个DHTML。</p>
-<p><strong>3.2、DOM1的出现</strong></p>
+<p><strong>2.2、DOM1的出现</strong></p>
 <p>W3C于1998年10月完成了第一级DOM，即：DOM1。W3C将DOM定义为一个与平台和编程语言无关的接口，通过这个接口程序和脚本可以动态的访问和修改文档的内容、结构和样式。<br>DOM1级主要定义了HTML和XML文档的底层结构。在DOM1中，DOM由两个模块组成：DOM Core（DOM核心）和DOM HTML。其中，DOM Core规定了基于XML的文档结构标准，通过这个标准简化了对文档中任意部分的访问和操作。DOM HTML则在DOM核心的基础上加以扩展，添加了针对HTML的对象和方法，比如：JavaScript中的Document对象。<br><img src="http://ot4uwpond.bkt.clouddn.com/3-2.jpg" alt=""></p>
-<p><strong>3.3、DOM2</strong></p>
+<p><strong>2.3、DOM2</strong></p>
 <p>在DOM1的基础上DOM2引入了更多的交互能力，也支持了更高级的XML特性。DOM2将DOM分为更多具有联系的模块。DOM2级在原来DOM的基础上又扩充了鼠标、用户界面事件、范围、遍历等细分模块，而且通过对象接口增加了对CSS的支持。DOM1级中的DOM核心模块也经过扩展开始支持XML命名空间。在DOM2中引入了下列模块，在模块包含了众多新类型和新接口：</p>
 <blockquote>
 <p>DOM视图（DOM Views）：定义了跟踪不同文档视图的接口<br>DOM事件（DOM Events）：定义了事件和事件处理的接口<br>DOM样式（DOM Style）：定义了基于CSS为元素应用样式的接口<br>DOM遍历和范围（DOM Traversal and Range）：定义了遍历和操作文档树的接口</p>
 </blockquote>
 <p><img src="http://ot4uwpond.bkt.clouddn.com/3-3-1.jpg" alt=""><br>完整的DOM2标准(图片来自百度百科):<br><img src="http://ot4uwpond.bkt.clouddn.com/3-3-2.jpg" alt=""></p>
-<p><strong>3.4、DOM3</strong></p>
+<p><strong>2.4、DOM3</strong></p>
 <p>DOM3级：进一步扩展了DOM，引入了以统一方式加载和保存文档的方法，它在DOM Load And Save这个模块中定义；同时新增了验证文档的方法，是在DOM Validation这个模块中定义的。</p>
 <p>DOM3进一步扩展了DOM，在DOM3中引入了以下模块：</p>
 <blockquote>
 <p>DOM加载和保存模块（DOM Load and Save）：引入了以统一方式加载和保存文档的方法<br>DOM验证模块（DOM Validation）：定义了验证文档的方法<br>DOM核心的扩展（DOM Style）：支持XML 1.0规范，涉及XML Infoset、XPath和XML Base</p>
 </blockquote>
 <p><img src="http://ot4uwpond.bkt.clouddn.com/3-4.jpg" alt=""></p>
-<h3 id="4、认识DOM"><a href="#4、认识DOM" class="headerlink" title="4、认识DOM"></a>4、认识DOM</h3><p>DOM可以将任何HTML描绘成一个由多层节点构成的结构。节点分为12种不同类型，每种类型分别表示文档中不同的信息及标记。每个节点都拥有各自的特点、数据和方法，也与其他节点存在某种关系。节点之间的关系构成了层次，而所有页面标记则表现为一个以特定节点为根节点的树形结构。</p>
+<h3 id="3、认识DOM"><a href="#3、认识DOM" class="headerlink" title="3、认识DOM"></a>3、认识DOM</h3><p>DOM可以将任何HTML描绘成一个由多层节点构成的结构。节点分为12种不同类型，每种类型分别表示文档中不同的信息及标记。每个节点都拥有各自的特点、数据和方法，也与其他节点存在某种关系。节点之间的关系构成了层次，而所有页面标记则表现为一个以特定节点为根节点的树形结构。</p>
 <p>先看一张w3school上面的一张图:<br><img src="http://ot4uwpond.bkt.clouddn.com/4-1.jpg" alt=""></p>
 <p>HTML文档可以说由节点构成的集合，DOM节点有:</p>
 <blockquote>
 <p>1.元素节点：上图中HTML、body、p等都是元素节点，即标签。<br>2.文本节点:向用户展示的内容，如li标签中的JavaScript、DOM、CSS等文本。<br>3.属性节点:元素属性，如a标签的链接属性href=”<a href="http://www.baidu.com&quot;。" target="_blank" rel="external">http://www.baidu.com&quot;。</a></p>
 </blockquote>
-<h3 id="5、DOM节点类型"><a href="#5、DOM节点类型" class="headerlink" title="5、DOM节点类型"></a>5、DOM节点类型</h3><p>DOM1级定义了一个Node接口，这个Node接口在JavaScript中是作为Node类型来实现的。除了IE以外，其他所有浏览器都可以访问这个类型。每个节点都有一个nodeType属性，用于表明节点的类型。节点类型通过定义数值常量和字符常量两种方式来表示，IE只支持数值常量。节点类型一共有12种，这里介绍常用的7种类型。如下图：<br><img src="http://ot4uwpond.bkt.clouddn.com/6-1.jpg" alt=""></p>
+<h3 id="4、DOM节点类型"><a href="#4、DOM节点类型" class="headerlink" title="4、DOM节点类型"></a>4、DOM节点类型</h3><p>DOM1级定义了一个Node接口，这个Node接口在JavaScript中是作为Node类型来实现的。除了IE以外，其他所有浏览器都可以访问这个类型。每个节点都有一个nodeType属性，用于表明节点的类型。节点类型通过定义数值常量和字符常量两种方式来表示，IE只支持数值常量。节点类型一共有12种，这里介绍常用的7种类型。如下图：<br><img src="http://ot4uwpond.bkt.clouddn.com/6-1.jpg" alt=""></p>
 <p>(1)Element(元素节点)：<br>是组成文档树的重要部分，它表示了HTML、xml文档中的元素。通常元素因为有子元素、文本节点或者两者的结合，元素节点是唯一能够拥有属性的节点类型。</p>
-<blockquote>
-<p>例子中的:HTML、heade、meta、title、body、div、ul、li、script都属于Element(元素节点);</p>
-</blockquote>
 <p>(2)Attr(属性节点)：<br>代表了元素中的属性，因为属性实际上是附属于元素的，因此属性节点不能被看做是元素的子节点。因而在DOM中属性没有被认为是文档树的一部分。换句话说，属性节点其实被看做是包含它的元素节点的一部分，它并不作为单独的一个节点在文档树中出现。</p>
-<blockquote>
-<p>例子中的:lang、charset、id、class都属于Attr(属性节点);</p>
-</blockquote>
 <p>(3)Text(文本节点)：<br>是只包含文本内容的节点，在xml中称为字符数据，它可以由更多的信息组成，也可以只包含空白。在文档树中元素的文本内容和属性的文本内容都是由文本节点来表示的。</p>
-<blockquote>
-<p>例子中的:DocumentFragment文档片段节点、test1、test2、元素节点之后的空白区域都属于Text(文本节点);</p>
-</blockquote>
 <p>(4)Comment(注释节点)：<br>表示注释的内容</p>
-<blockquote>
-<p>例子中的:tip区域 都属于Comment(注释节点);</p>
-</blockquote>
 <p>(5)Document(文档节点) ：<br>是文档树的根节点，它是文档中其他所有节点的父节点。要注意的是，文档节点并不是HTML、xml文档的根元素，因为在xml文档中，处理指令、注释等内容可以出现在根元素之外，所以我们在构造DOM树的时候，根元素并不适合作为根节点，因此就有了文档节点，而根元素是作为文档节点的子节点出现的。</p>
-<blockquote>
-<p>例子中的：!DOCTYPE HTML、HTML作为Document(文档节点)的子节点出现;</p>
-</blockquote>
 <p>(6)DocumentType(文档类型节点)：<br>每一个Document都有一个DocumentType属性，它的值或者是null，或者是DocumentType对象。比如声明文档类型时!doctype HTML就是文档类型节点。</p>
-<blockquote>
-<p>例子中的：!DOCTYPE HTML 就属于DocumentType(文档类型节点);</p>
-</blockquote>
 <p>(7)DocumentFragment(文档片段节点)：<br>是轻量级的或最小的Document对象，它表示文档的一部分或者是一段，不属于文档树。不过它有一种特殊的行为，该行为使得它非常有用。比如：当请求把一个DocumentFragment节点插入到文档的时候，插入的不是DocumentFragment自身，而是它的所有的子孙节点。这使得DocumentFragment成了有用的占位符，暂时存放那些一次插入文档的节点，同时它还有利于实现文档的剪切、复制和粘贴等操作。</p>
-<blockquote>
-<p>例子中的:var frag = document.createDocumentFragment();frag就属于DocumentFragment(文档片段节点)。<br>createdocumentfragment()方法创建了一虚拟的节点对象，包含所有属性和方法。</p>
-</blockquote>
-<h3 id="7、DOM的nodeType、nodeName、nodeValue"><a href="#7、DOM的nodeType、nodeName、nodeValue" class="headerlink" title="7、DOM的nodeType、nodeName、nodeValue"></a>7、DOM的nodeType、nodeName、nodeValue</h3><p>根据实验，得出以下汇总表格:<br><img src="http://ot4uwpond.bkt.clouddn.com/7-1.jpg" alt=""></p>
-<h3 id="8、domReady"><a href="#8、domReady" class="headerlink" title="8、domReady"></a>8、domReady</h3><p><strong>8.1、什么是domReady？</strong></p>
-<p>HTML是一种标记语言，它告诉我们这个页面有什么内容，但行为交互是需要通过DOM操作来实现的。HTML标签要通过浏览器解析才会变成DOM节点，当我们向地址栏传入一个url后到页面加载完成，在这期间就有一个DOM节点构建的过程。节点是以树的形式组织的，当页面上所有的HTML都转换为节点以后，就叫做DOM树构建完毕，简称为domReady。</p>
-<p><strong>8.2、那么浏览器是如何将HTML标签解析变成DOM节点的呢？</strong></p>
+<h3 id="5、DOM的nodeType、nodeName、nodeValue"><a href="#5、DOM的nodeType、nodeName、nodeValue" class="headerlink" title="5、DOM的nodeType、nodeName、nodeValue"></a>5、DOM的nodeType、nodeName、nodeValue</h3><p>根据实验，得出以下汇总表格:<br><img src="http://ot4uwpond.bkt.clouddn.com/7-1.jpg" alt=""></p>
+<h3 id="6、domReady"><a href="#6、domReady" class="headerlink" title="6、domReady"></a>6、domReady</h3><p><strong>6.1、什么是domReady？</strong></p>
+<p>节点是以树的形式组织的，当页面上所有的HTML都转换为节点以后，就叫做DOM树构建完毕，简称为domReady。</p>
+<p><strong>6.2、那么浏览器是如何将HTML标签解析变成DOM节点的呢？</strong></p>
 <p>实际上浏览器是通过渲染引擎来实现的，默认情况下渲染引擎可以显示HTML、xml文档及图片，渲染引擎的主要用途，即是将css格式化的HTML和图片在浏览器上进行显示。</p>
-<p><strong>8.3、浏览器渲染引擎的基本渲染流程</strong></p>
-<p>渲染引擎首先通过网络获得所请求文档的内容，通常以8k分块的方法来完成：<br><img src="http://ot4uwpond.bkt.clouddn.com/webkitflow.png" alt=""></p>
+<p><strong>6.3、浏览器渲染引擎的基本渲染流程</strong></p>
+<p><img src="http://ot4uwpond.bkt.clouddn.com/webkitflow.png" alt=""></p>
 <p>上图就是webkit内核的HTML渲染的基本过程，但这并不包含解析过程中浏览器加载外部资源，比如图片、脚本、iframe等的一些过程。上面的4步仅仅是HTML结构的渲染过程。而外部资源的加载在HTML结构的渲染过程中是贯彻始终的，即便绘制DOM节点已经完成，而外部资源仍然可能正在加载或者尚未加载。</p>
-<p><strong>8.4、domReady的实现策略</strong></p>
-<p>上面的代码实例中，并没有考虑domReady，程序也能正常运行，因为我们把javascript代码写在了body元素最后的位置。浏览器是从上到下，从左向右渲染HTML元素的，这样实例中的js代码一定在domReady之后去执行的。但在编写大型项目的时候，js文件往往非常多，而且之间会相互调用，大多数都是外部引用的。这种方式无法保证不管逻辑代码写在哪里，都是等到domReady之后去执行。</p>
+<p><strong>6.4、domReady的实现策略</strong></p>
+<p>浏览器是从上到下，从左向右渲染HTML元素的，把javascript代码写在了body元素最后的位置会在domReady之后去执行的。但在编写大型项目的时候，js文件往往非常多，而且之间会相互调用，大多数都是外部引用的。要实现domReady可以使用以下方法：</p>
 <p>1.原来比较常用的是window的onload事件，而该事件的实际效果是：当页面解析/DOM树建立完成，并完成了诸如图片、脚本、样式表甚至是iframe中所有资源的下载后才触发的。这对于很多实际的应用而言有点太“迟”了，比较影响用户体验。</p>
 <p>2.jquery中的$(document).ready(function(){})方法。</p>
 <p>3.为了解决window.onload的短板，w3c新增了一个DOMContentLoaded事件。<br>在页面的DOM树创建完成后（也就是HTML解析第一步完成）即触发，而无需等待其他资源的加载。</p>
@@ -265,9 +241,9 @@
 <blockquote>
 <p>1.支持DOMContentLoaded事件的，就使用DOMContentLoaded事件。当初始HTML文档被完全加载和解析时，DOMContentLoaded 事件被触发，而无需等待样式表、图像和子框架完成加载。<br>2.不支持的使用著名Hack兼容。兼容原理大概就是通过IE中的document.documentElement.doScroll(‘left’)来判断DOM树是否创建完毕。</p>
 </blockquote>
-<p>根据以上策略使用原生JavaScript实现domReady。</p>
-<p>各个主流框架domReady的实现：<a href="http://www.cnblogs.com/JulyZhang/archive/2011/02/12/1952484.html" target="_blank" rel="external">点击我查看</a></p>
-<p><strong>8.5、domReady与window.onload</strong></p>
+<p>根据以上策略实现原生JavaScript实现domReady。</p>
+<p>各个主流框架domReady的实现：<a href="http://www.cnblogs.com/JulyZhang/archive/2011/02/12/1952484.html" target="_blank" rel="external">点击查看</a></p>
+<p><strong>6.5、domReady与window.onload</strong></p>
 <p>onload事件是要在所有请求都完成之后才执行，而domReady在加载完dom树之后就能执行，所以domReady比onload执行时间更早。</p>
 <p>参考资料：<br>深入浅出DOM基础<br>W3C DOM教程</p>
 
@@ -475,15 +451,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">碎碎念</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
