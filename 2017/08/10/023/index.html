@@ -22,12 +22,10 @@
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/3-3-2.jpg">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/3-4.jpg">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/4-1.jpg">
-<meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/4-2.jpg">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/6-1.jpg">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/7-1.jpg">
-<meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/8-3.jpg">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/webkitflow.png">
-<meta property="og:updated_time" content="2017-08-10T09:52:38.691Z">
+<meta property="og:updated_time" content="2017-08-11T01:50:37.055Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DOM">
 <meta name="twitter:description" content="1、什么是DOM? DOM，文档对象模型（Document Object Model）。DOM是 W3C（万维网联盟）的标准，DOM定义了访问HTML和XML文档的标准。在W3C的标准中，DOM是独于平台和语言的接口，它允许程序和脚本动态地访问和更新文档的内容、结构和样式。">
@@ -217,7 +215,6 @@
 <p><img src="http://ot4uwpond.bkt.clouddn.com/3-4.jpg" alt=""></p>
 <h3 id="4、认识DOM"><a href="#4、认识DOM" class="headerlink" title="4、认识DOM"></a>4、认识DOM</h3><p>DOM可以将任何HTML描绘成一个由多层节点构成的结构。节点分为12种不同类型，每种类型分别表示文档中不同的信息及标记。每个节点都拥有各自的特点、数据和方法，也与其他节点存在某种关系。节点之间的关系构成了层次，而所有页面标记则表现为一个以特定节点为根节点的树形结构。</p>
 <p>先看一张w3school上面的一张图:<br><img src="http://ot4uwpond.bkt.clouddn.com/4-1.jpg" alt=""></p>
-<p>将HTML代码分解为DOM节点层次图:<br><img src="http://ot4uwpond.bkt.clouddn.com/4-2.jpg" alt=""></p>
 <p>HTML文档可以说由节点构成的集合，DOM节点有:</p>
 <blockquote>
 <p>1.元素节点：上图中HTML、body、p等都是元素节点，即标签。<br>2.文本节点:向用户展示的内容，如li标签中的JavaScript、DOM、CSS等文本。<br>3.属性节点:元素属性，如a标签的链接属性href=”<a href="http://www.baidu.com&quot;。" target="_blank" rel="external">http://www.baidu.com&quot;。</a></p>
@@ -257,7 +254,6 @@
 <p><strong>8.2、那么浏览器是如何将HTML标签解析变成DOM节点的呢？</strong></p>
 <p>实际上浏览器是通过渲染引擎来实现的，默认情况下渲染引擎可以显示HTML、xml文档及图片，渲染引擎的主要用途，即是将css格式化的HTML和图片在浏览器上进行显示。</p>
 <p><strong>8.3、浏览器渲染引擎的基本渲染流程</strong></p>
-<p>浏览器渲染要做的事就是把CSS、HTML、图片等静态资源展示到用户眼前。<br><img src="http://ot4uwpond.bkt.clouddn.com/8-3.jpg" alt=""></p>
 <p>渲染引擎首先通过网络获得所请求文档的内容，通常以8k分块的方法来完成：<br><img src="http://ot4uwpond.bkt.clouddn.com/webkitflow.png" alt=""></p>
 <p>上图就是webkit内核的HTML渲染的基本过程，但这并不包含解析过程中浏览器加载外部资源，比如图片、脚本、iframe等的一些过程。上面的4步仅仅是HTML结构的渲染过程。而外部资源的加载在HTML结构的渲染过程中是贯彻始终的，即便绘制DOM节点已经完成，而外部资源仍然可能正在加载或者尚未加载。</p>
 <p><strong>8.4、domReady的实现策略</strong></p>
@@ -269,7 +265,7 @@
 <blockquote>
 <p>1.支持DOMContentLoaded事件的，就使用DOMContentLoaded事件。当初始HTML文档被完全加载和解析时，DOMContentLoaded 事件被触发，而无需等待样式表、图像和子框架完成加载。<br>2.不支持的使用著名Hack兼容。兼容原理大概就是通过IE中的document.documentElement.doScroll(‘left’)来判断DOM树是否创建完毕。</p>
 </blockquote>
-<p>根据以上策略使用原生JavaScript实现domReady。在页面中引入donReady.js文件，引用myReady(回调函数)方法即可。</p>
+<p>根据以上策略使用原生JavaScript实现domReady。</p>
 <p>各个主流框架domReady的实现：<a href="http://www.cnblogs.com/JulyZhang/archive/2011/02/12/1952484.html" target="_blank" rel="external">点击我查看</a></p>
 <p><strong>8.5、domReady与window.onload</strong></p>
 <p>onload事件是要在所有请求都完成之后才执行，而domReady在加载完dom树之后就能执行，所以domReady比onload执行时间更早。</p>
@@ -479,15 +475,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">碎碎念</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
