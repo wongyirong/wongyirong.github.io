@@ -18,7 +18,7 @@
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/box.jpg">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/con.png">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/ie.png">
-<meta property="og:updated_time" content="2017-08-07T04:24:18.874Z">
+<meta property="og:updated_time" content="2017-08-24T08:07:44.536Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="到底什么是标准和怪异">
 <meta name="twitter:description" content="在标准模式下，一个块的总宽度=width+margin(左右)+padding(左右)+border(左右)在怪异模式下，一个块的总宽度=width+margin（左右）（既width已经包含了padding和border值）">
@@ -87,7 +87,7 @@
 		        
 					<a class="github" target="_blank" href="https://github.com/wongyirong" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+					<a class="rss" target="_blank" href="https://wongyirong.github.io/Demo/" title="rss"><i class="icon-rss"></i></a>
 		        
 			</div>
 		</nav>
@@ -128,7 +128,7 @@
 			        
 						<a class="github" target="_blank" href="https://github.com/wongyirong" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+						<a class="rss" target="_blank" href="https://wongyirong.github.io/Demo/" title="rss"><i class="icon-rss"></i></a>
 			        
 				</div>
 			</nav>
@@ -179,6 +179,15 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">.con_box&#123;</div><div class="line">    box-sizing: content-box;</div><div class="line">    width: 100px;</div><div class="line">    height: 100px;</div><div class="line">    padding: 10px;</div><div class="line">    margin: 50px;</div><div class="line">    border: 10px solid green;</div><div class="line">    background: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="https://wongyirong.github.io/Demo/boxDemo/content-box.html">在线演示</a><br>截图：<br><img src="http://ot4uwpond.bkt.clouddn.com/con.png" alt=""><br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">.ie_box&#123;</div><div class="line">    box-sizing: border-box;</div><div class="line">    width: 100px;</div><div class="line">    height: 100px;</div><div class="line">    border: 10px solid green;</div><div class="line">    padding: 10px;</div><div class="line">    margin: 50px;</div><div class="line">    background: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><a href="https://wongyirong.github.io/Demo/boxDemo/ie-box.html">在线演示</a><br>截图：<br><img src="http://ot4uwpond.bkt.clouddn.com/ie.png" alt=""></p>
+<h3 id="Doctype"><a href="#Doctype" class="headerlink" title="Doctype"></a>Doctype</h3><p>浏览器的模式可以分为两类：标准模式和混杂模式。</p>
+<p>DOCTYPE，或者称为 Document Type Declaration（文档类型声明，缩写DTD）。通常情况下，DOCTYPE 位于一个 HTML文档的最前面的位置，位于根元素 HTML 的起始标签之前。这样一来，在浏览器解析 HTML 文档正文之前就可以确定当前文档的类型，以决定其需要采用的渲染模式（不同的渲染模式会影响到浏览器对于 CSS 代码甚至 JavaScript 脚本的解析）。</p>
+<p>DOCTYPE不存在或形式不正确会导致HTML和XHTML文档以混杂模式呈现。</p>
+<p>html5的DOCTYPE声明和严格型HTML声明以及严格型XHTML声明则会使浏览器进入标准模式。</p>
+<blockquote>
+<p>html5既然没有DTD，也就没有严格模式与宽松模式的区别，html5有相对宽松的语法，实现时，已经尽可能大的实现了向后兼容。</p>
+</blockquote>
+<p>混杂模式是不可取的，因为其没有兼容性可言。<br>标准模式则是对统一标准实现最好的模式，它要求标签必须闭合（唯一不需要闭合的就是DOCTYPE标签），不能使用已经废弃的标签等。</p>
+<p>用JS判断浏览器当前的模式：<br>document.write(document.compatMode == “CSS1Compat” ? “当前处于标准模式” : “当前处于混杂模式”);</p>
 
       
 
@@ -452,7 +461,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">王艺荣，&lt;br&gt;中南大学2015级研究生&lt;br&gt;&lt;br&gt;易燃易爆炸，气质不稳定&lt;br&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;a href=&quot;https://wongyirong.github.io/Demo/&quot;&gt;个人简历&lt;/a&gt;</div>
   	  	
     	</section>
     
