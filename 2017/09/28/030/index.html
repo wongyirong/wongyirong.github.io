@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://wongyirong.github.io">
-  <title>使用node.js和mongoDB建站 | 裙角飞扬</title>
+  <title>笔试面试知识点整理2 | 裙角飞扬</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是模仿豆瓣电影做的一个电影网站的demo，实现一个从前端到后端的项目，使用了nodejs、express、mongodb。前端页面采用了jade 模板引擎。在线仓库地址：">
-<meta name="keywords" content="学习笔记">
+  <meta name="description" content="JavaScript的遍历1.for/while循环语句 2.for…in语句 适用对象var obj = &amp;#123;    a:&quot;1&quot;,    b:&quot;2&quot;,    c:&quot;3&quot;&amp;#125;;for(var key in obj) &amp;#123;    console.log(obj[key]);&amp;#125; 优点：支持所有对象类型的数据，包括数组，甚至是函数等。缺点：不仅遍历普通属性，也遍历原型链">
+<meta name="keywords" content="笔试面试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用node.js和mongoDB建站">
-<meta property="og:url" content="https://wongyirong.github.io/2017/07/26/009/index.html">
+<meta property="og:title" content="笔试面试知识点整理2">
+<meta property="og:url" content="https://wongyirong.github.io/2017/09/28/030/index.html">
 <meta property="og:site_name" content="裙角飞扬">
-<meta property="og:description" content="这是模仿豆瓣电影做的一个电影网站的demo，实现一个从前端到后端的项目，使用了nodejs、express、mongodb。前端页面采用了jade 模板引擎。在线仓库地址：">
-<meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/mongoosejs-node-mongodb-applications.png">
-<meta property="og:updated_time" content="2017-09-08T03:40:16.933Z">
+<meta property="og:description" content="JavaScript的遍历1.for/while循环语句 2.for…in语句 适用对象var obj = &amp;#123;    a:&quot;1&quot;,    b:&quot;2&quot;,    c:&quot;3&quot;&amp;#125;;for(var key in obj) &amp;#123;    console.log(obj[key]);&amp;#125; 优点：支持所有对象类型的数据，包括数组，甚至是函数等。缺点：不仅遍历普通属性，也遍历原型链">
+<meta property="og:updated_time" content="2017-09-28T13:09:50.724Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用node.js和mongoDB建站">
-<meta name="twitter:description" content="这是模仿豆瓣电影做的一个电影网站的demo，实现一个从前端到后端的项目，使用了nodejs、express、mongodb。前端页面采用了jade 模板引擎。在线仓库地址：">
-<meta name="twitter:image" content="http://ot4uwpond.bkt.clouddn.com/mongoosejs-node-mongodb-applications.png">
+<meta name="twitter:title" content="笔试面试知识点整理2">
+<meta name="twitter:description" content="JavaScript的遍历1.for/while循环语句 2.for…in语句 适用对象var obj = &amp;#123;    a:&quot;1&quot;,    b:&quot;2&quot;,    c:&quot;3&quot;&amp;#125;;for(var key in obj) &amp;#123;    console.log(obj[key]);&amp;#125; 优点：支持所有对象类型的数据，包括数组，甚至是函数等。缺点：不仅遍历普通属性，也遍历原型链">
   
   
     <link rel="icon" href="http://ot4uwpond.bkt.clouddn.com/favicon.png">
@@ -152,37 +150,39 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-009" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-030" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      使用node.js和mongoDB建站
+      笔试面试知识点整理2
     </h1>
   
 
         
-        <a href="/2017/07/26/009/" class="archive-article-date">
-  	<time datetime="2017-07-26T00:44:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-26</time>
+        <a href="/2017/09/28/030/" class="archive-article-date">
+  	<time datetime="2017-09-28T10:50:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://ot4uwpond.bkt.clouddn.com/mongoosejs-node-mongodb-applications.png" alt=""><br>这是模仿豆瓣电影做的一个电影网站的demo，实现一个从前端到后端的项目，使用了nodejs、express、mongodb。前端页面采用了jade 模板引擎。<br>在线仓库地址：<a href="https://github.com/wongyirong/MoviesDemo" target="_blank" rel="external"></a><br><a id="more"></a></p>
-<h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><p>将本地项目上传到github(git status)，首先在github上创建一个Git仓库</p>
-<pre><code>git init
-git add .
-git commit -m &quot;first commit&quot;
-git remote add origin https://github.com/wongyirong/iMooc.git
-git push -u origin master
-</code></pre><p>另外:由于新建的远程仓库是空的，所以要加上-u这个参数，等远程仓库有了内容之后，下次使用git push origin master<br>还有一个问题，当时我在github上创建仓库的时候勾选了Initialize this repository with a README，在git push的时候报错，我当时为了解决问题，强制推送git push -f origin master，总结的时候又查了一下发现可以先将远程pull下来再push</p>
-<pre><code>git pull -r origin master
-</code></pre><h3 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h3><p>mongoDB手动启动服务：mongod –dbpath=D:\Develop\MongoDB\Server\3.4\data\db<br>注册为windows服务：<br>mongod.exe –logpath “D:\Develop\MongoDB\Server\3.4\data\log\mongodb.log” –logappend –dbpath “D:\Develop\MongoDB\Server\3.4\data\db” –serviceName “MongoDB” –install<br>安装未成功，解决办法：<br>找到cmd.exe，右键以管理员身份运行，然后再执行上述注册服务的命令。</p>
-<h3 id="node"><a href="#node" class="headerlink" title="node"></a>node</h3><p>npm install -g n<br>n latest</p>
+        <h3 id="JavaScript的遍历"><a href="#JavaScript的遍历" class="headerlink" title="JavaScript的遍历"></a>JavaScript的遍历</h3><p>1.for/while循环语句</p>
+<p>2.for…in语句 适用对象<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    <span class="attr">a</span>:<span class="string">"1"</span>,</div><div class="line">    <span class="attr">b</span>:<span class="string">"2"</span>,</div><div class="line">    <span class="attr">c</span>:<span class="string">"3"</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</div><div class="line">    <span class="built_in">console</span>.log(obj[key]);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>优点：支持所有对象类型的数据，包括数组，甚至是函数等。<br>缺点：不仅遍历普通属性，也遍历原型链上的属性。<br>建议：在遍历常用对象时使用（不适用Map）</p>
+<p>3.for…of ES6新增 适用map<br>遍历数组<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> value <span class="keyword">of</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]) &#123;</div><div class="line">  <span class="built_in">console</span>.log(value);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>遍历字符串<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> chr <span class="keyword">of</span> <span class="string">"123"</span>) &#123;</div><div class="line">  <span class="built_in">console</span>.log(chr);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>遍历Map<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> list = <span class="keyword">new</span> <span class="built_in">Map</span>().set(<span class="string">'a'</span>,<span class="number">1</span>).set(<span class="string">'b'</span>,<span class="number">2</span>).set(<span class="string">'c'</span>,<span class="number">3</span>);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> [key,value] <span class="keyword">of</span> list) &#123;</div><div class="line">    <span class="built_in">console</span>.log(key + <span class="string">'=&gt;'</span> + value);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>不可用于遍历对象的属性，但可以与内建的Object.keys()方法一起使用<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 向控制台输出对象的可枚举属性</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">of</span> <span class="built_in">Object</span>.keys(obj)) &#123;</div><div class="line">  <span class="built_in">console</span>.log(key + <span class="string">": "</span> + obj[key]);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>还可以遍历类数组对象，Set等<br>优点：可以遍历任何部署了Iterator接口的数据结构，甚至是非JavaScript的数据类型<br>正确响应break、continue和return语句<br>缺点：不能用来遍历普通对象。<br>建议：推荐使用，最简洁强大的循环语句。</p>
+<p>4.ES5的数组迭代方法 遍历数组<br>forEach()方法 对数组每一项运行给定的函数，没有返回值<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> nums = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">nums.forEach( <span class="function"><span class="keyword">function</span>(<span class="params">element, index</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(index + <span class="string">":"</span> + element);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>map()方法 对数组每一项运行给定的函数，返回每次函数调用的结果组成的数组<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> doubleNums = nums.map(<span class="function"><span class="keyword">function</span> (<span class="params">num</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> num * <span class="number">2</span>;</div><div class="line">&#125;); <span class="comment">//doubleNums存储每次函数调用的结果组成的数组</span></div><div class="line"><span class="built_in">console</span>.log(doubleNums);</div><div class="line"><span class="built_in">console</span>.log(nums);</div></pre></td></tr></table></figure></p>
+<p>filter()方法 对数组每一项运行给定的函数，返回该函数会返回true的项组成的数组<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> result = nums.filter(<span class="function"><span class="params">x</span> =&gt;</span> x &gt; <span class="number">1</span>);</div><div class="line"><span class="built_in">console</span>.log(result);</div></pre></td></tr></table></figure></p>
+<p>every()和some()方法 every每一项为true返回true,some有一个为true返回true<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> everyRes = nums.every(<span class="function"><span class="keyword">function</span>(<span class="params">element, index, array</span>) </span>&#123;</div><div class="line"><span class="comment">//传入三个参数，根据需要可选</span></div><div class="line">    <span class="keyword">return</span> (element &gt; <span class="number">1</span>);</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(everyRes); <span class="comment">//false</span></div><div class="line"><span class="keyword">var</span> someRes = nums.some(<span class="function"><span class="keyword">function</span>(<span class="params">element, index, array</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (element &gt; <span class="number">1</span>);</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(someRes); <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
+<p>缺点：仅支持数组。而且一旦调用，会完全遍历一次，break, continue, return都无效。<br>建议：仅在遍历数组的时候使用。</p>
 
       
 
@@ -196,7 +196,7 @@ git push -u origin master
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">笔试面试</a>
         		</li>
       		
 		</ul>
@@ -252,7 +252,7 @@ git push -u origin master
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://wongyirong.github.io/2017/07/26/009/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://wongyirong.github.io/2017/09/28/030/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -266,18 +266,9 @@ git push -u origin master
   
 <nav id="article-nav">
   
-    <a href="/2017/07/27/010/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          一个问题引出的正则表达式总结
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/07/19/008/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">从输入URL到页面加载完成到底发生了什么？</div>
+    <a href="/2017/09/28/029/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">笔试面试知识点整理</div>
       <i class="icon-circle-right"></i>
     </a>
   
