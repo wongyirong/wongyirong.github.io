@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://wongyirong.github.io">
-  <title>笔试面试知识点整理2 | 裙角飞扬</title>
+  <title>JavaScript的遍历 | 裙角飞扬</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JavaScript的遍历1.for/while循环语句 2.for…in语句 适用对象var obj = &amp;#123;    a:&quot;1&quot;,    b:&quot;2&quot;,    c:&quot;3&quot;&amp;#125;;for(var key in obj) &amp;#123;    console.log(obj[key]);&amp;#125; 优点：支持所有对象类型的数据，包括数组，甚至是函数等。缺点：不仅遍历普通属性，也遍历原型链">
+  <meta name="description" content="1.for/while循环语句最常见的遍历方法，for/while能力有限，而且性能上也堪忧。必须借助特定的结构才能遍历数据结构。2.for…in语句 适用对象var obj = &amp;#123;    a:&quot;1&quot;,    b:&quot;2&quot;,    c:&quot;3&quot;&amp;#125;;for(var key in obj) &amp;#123;    console.log(obj[key]);&amp;#125; 优点：支持所有对象">
 <meta name="keywords" content="笔试面试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="笔试面试知识点整理2">
+<meta property="og:title" content="JavaScript的遍历">
 <meta property="og:url" content="https://wongyirong.github.io/2017/09/28/030/index.html">
 <meta property="og:site_name" content="裙角飞扬">
-<meta property="og:description" content="JavaScript的遍历1.for/while循环语句 2.for…in语句 适用对象var obj = &amp;#123;    a:&quot;1&quot;,    b:&quot;2&quot;,    c:&quot;3&quot;&amp;#125;;for(var key in obj) &amp;#123;    console.log(obj[key]);&amp;#125; 优点：支持所有对象类型的数据，包括数组，甚至是函数等。缺点：不仅遍历普通属性，也遍历原型链">
-<meta property="og:updated_time" content="2017-09-28T13:09:50.724Z">
+<meta property="og:description" content="1.for/while循环语句最常见的遍历方法，for/while能力有限，而且性能上也堪忧。必须借助特定的结构才能遍历数据结构。2.for…in语句 适用对象var obj = &amp;#123;    a:&quot;1&quot;,    b:&quot;2&quot;,    c:&quot;3&quot;&amp;#125;;for(var key in obj) &amp;#123;    console.log(obj[key]);&amp;#125; 优点：支持所有对象">
+<meta property="og:updated_time" content="2017-09-28T13:44:48.885Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="笔试面试知识点整理2">
-<meta name="twitter:description" content="JavaScript的遍历1.for/while循环语句 2.for…in语句 适用对象var obj = &amp;#123;    a:&quot;1&quot;,    b:&quot;2&quot;,    c:&quot;3&quot;&amp;#125;;for(var key in obj) &amp;#123;    console.log(obj[key]);&amp;#125; 优点：支持所有对象类型的数据，包括数组，甚至是函数等。缺点：不仅遍历普通属性，也遍历原型链">
+<meta name="twitter:title" content="JavaScript的遍历">
+<meta name="twitter:description" content="1.for/while循环语句最常见的遍历方法，for/while能力有限，而且性能上也堪忧。必须借助特定的结构才能遍历数据结构。2.for…in语句 适用对象var obj = &amp;#123;    a:&quot;1&quot;,    b:&quot;2&quot;,    c:&quot;3&quot;&amp;#125;;for(var key in obj) &amp;#123;    console.log(obj[key]);&amp;#125; 优点：支持所有对象">
   
   
     <link rel="icon" href="http://ot4uwpond.bkt.clouddn.com/favicon.png">
@@ -157,7 +157,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      笔试面试知识点整理2
+      JavaScript的遍历
     </h1>
   
 
@@ -170,9 +170,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="JavaScript的遍历"><a href="#JavaScript的遍历" class="headerlink" title="JavaScript的遍历"></a>JavaScript的遍历</h3><p>1.for/while循环语句</p>
-<p>2.for…in语句 适用对象<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    <span class="attr">a</span>:<span class="string">"1"</span>,</div><div class="line">    <span class="attr">b</span>:<span class="string">"2"</span>,</div><div class="line">    <span class="attr">c</span>:<span class="string">"3"</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</div><div class="line">    <span class="built_in">console</span>.log(obj[key]);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>1.for/while循环语句<br>最常见的遍历方法，for/while能力有限，而且性能上也堪忧。必须借助特定的结构才能遍历数据结构。<br>2.for…in语句 适用对象<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    <span class="attr">a</span>:<span class="string">"1"</span>,</div><div class="line">    <span class="attr">b</span>:<span class="string">"2"</span>,</div><div class="line">    <span class="attr">c</span>:<span class="string">"3"</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</div><div class="line">    <span class="built_in">console</span>.log(obj[key]);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>优点：支持所有对象类型的数据，包括数组，甚至是函数等。<br>缺点：不仅遍历普通属性，也遍历原型链上的属性。<br>建议：在遍历常用对象时使用（不适用Map）</p>
+<a id="more"></a>
 <p>3.for…of ES6新增 适用map<br>遍历数组<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> value <span class="keyword">of</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]) &#123;</div><div class="line">  <span class="built_in">console</span>.log(value);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>遍历字符串<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> chr <span class="keyword">of</span> <span class="string">"123"</span>) &#123;</div><div class="line">  <span class="built_in">console</span>.log(chr);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>遍历Map<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> list = <span class="keyword">new</span> <span class="built_in">Map</span>().set(<span class="string">'a'</span>,<span class="number">1</span>).set(<span class="string">'b'</span>,<span class="number">2</span>).set(<span class="string">'c'</span>,<span class="number">3</span>);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> [key,value] <span class="keyword">of</span> list) &#123;</div><div class="line">    <span class="built_in">console</span>.log(key + <span class="string">'=&gt;'</span> + value);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -396,11 +396,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">笔试面试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">笔试面试</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
