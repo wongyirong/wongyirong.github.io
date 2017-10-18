@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://wongyirong.github.io">
   <title>缓存问题整理 | 裙角飞扬</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="浏览器缓存浏览器缓存策略，时效标志etag标志cookie和session, cookie和webStorage的区别，如果cookie被篡改怎么办前端缓存机制，如果去掉etags\last-modefied\cache-control这些控制缓存的字段，浏览器会怎么处理缓存 本地缓存静态文件的web缓存机制 原生js里面怎么操作cookie cors怎么让cookie传过去 怎么给cookie中">
+  <meta name="description" content="本地缓存cookiecookie和session, cookie和webStorage的区别，如果cookie被篡改怎么办 静态文件的web缓存机制 原生js里面怎么操作cookie cors怎么让cookie传过去 怎么给cookie中添加值 cookie的形式，它的一些操作方法 怎么删除cookie，如何使用原生js手动删除">
 <meta name="keywords" content="笔试面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="缓存问题整理">
 <meta property="og:url" content="https://wongyirong.github.io/2017/10/01/030/index.html">
 <meta property="og:site_name" content="裙角飞扬">
-<meta property="og:description" content="浏览器缓存浏览器缓存策略，时效标志etag标志cookie和session, cookie和webStorage的区别，如果cookie被篡改怎么办前端缓存机制，如果去掉etags\last-modefied\cache-control这些控制缓存的字段，浏览器会怎么处理缓存 本地缓存静态文件的web缓存机制 原生js里面怎么操作cookie cors怎么让cookie传过去 怎么给cookie中">
-<meta property="og:updated_time" content="2017-10-09T13:02:13.738Z">
+<meta property="og:description" content="本地缓存cookiecookie和session, cookie和webStorage的区别，如果cookie被篡改怎么办 静态文件的web缓存机制 原生js里面怎么操作cookie cors怎么让cookie传过去 怎么给cookie中添加值 cookie的形式，它的一些操作方法 怎么删除cookie，如何使用原生js手动删除">
+<meta property="og:updated_time" content="2017-10-14T13:57:23.135Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="缓存问题整理">
-<meta name="twitter:description" content="浏览器缓存浏览器缓存策略，时效标志etag标志cookie和session, cookie和webStorage的区别，如果cookie被篡改怎么办前端缓存机制，如果去掉etags\last-modefied\cache-control这些控制缓存的字段，浏览器会怎么处理缓存 本地缓存静态文件的web缓存机制 原生js里面怎么操作cookie cors怎么让cookie传过去 怎么给cookie中">
+<meta name="twitter:description" content="本地缓存cookiecookie和session, cookie和webStorage的区别，如果cookie被篡改怎么办 静态文件的web缓存机制 原生js里面怎么操作cookie cors怎么让cookie传过去 怎么给cookie中添加值 cookie的形式，它的一些操作方法 怎么删除cookie，如何使用原生js手动删除">
   
   
     <link rel="icon" href="http://ot4uwpond.bkt.clouddn.com/favicon.png">
@@ -170,8 +170,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h3><p>浏览器缓存策略，时效标志etag标志<br>cookie和session, cookie和webStorage的区别，如果cookie被篡改怎么办<br>前端缓存机制，如果去掉etags\last-modefied\cache-control这些控制缓存的字段，浏览器会怎么处理缓存</p>
-<h3 id="本地缓存"><a href="#本地缓存" class="headerlink" title="本地缓存"></a>本地缓存</h3><p>静态文件的web缓存机制</p>
+        <h2 id="本地缓存"><a href="#本地缓存" class="headerlink" title="本地缓存"></a>本地缓存</h2><h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><p>cookie和session, cookie和webStorage的区别，如果cookie被篡改怎么办</p>
+<p>静态文件的web缓存机制</p>
 <p>原生js里面怎么操作cookie</p>
 <p>cors怎么让cookie传过去</p>
 <p>怎么给cookie中添加值</p>
@@ -391,7 +391,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">碎碎念</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -399,11 +399,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">笔试面试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">笔试面试</a>
+                <a href="javascript:void(0)" class="js-tag color4">碎碎念</a>
               </li>
             
             <div class="clearfix"></div>

@@ -8,17 +8,20 @@
   <link rel="dns-prefetch" href="https://wongyirong.github.io">
   <title>网络编程问题整理 | 裙角飞扬</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.常见的响应码401响应类别一共有5种：  1XX Informational(信息性状态码)2XX Success(成功状态码)3XX Redirection(重定向状态码)4XX Client Error(客户端错误状态码)5XX Server Error(服务器错误状态码)HTTP响应状态码有很多，但是实际经常使用的大概只有14个。">
+  <meta name="description" content="http1.常见的响应码401响应类别一共有5种：  1XX Informational(信息性状态码)2XX Success(成功状态码)3XX Redirection(重定向状态码)4XX Client Error(客户端错误状态码)5XX Server Error(服务器错误状态码)HTTP响应状态码有很多，但是实际经常使用的大概只有14个。">
 <meta name="keywords" content="笔试面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网络编程问题整理">
 <meta property="og:url" content="https://wongyirong.github.io/2017/09/30/029/index.html">
 <meta property="og:site_name" content="裙角飞扬">
-<meta property="og:description" content="1.常见的响应码401响应类别一共有5种：  1XX Informational(信息性状态码)2XX Success(成功状态码)3XX Redirection(重定向状态码)4XX Client Error(客户端错误状态码)5XX Server Error(服务器错误状态码)HTTP响应状态码有很多，但是实际经常使用的大概只有14个。">
-<meta property="og:updated_time" content="2017-10-09T13:02:17.824Z">
+<meta property="og:description" content="http1.常见的响应码401响应类别一共有5种：  1XX Informational(信息性状态码)2XX Success(成功状态码)3XX Redirection(重定向状态码)4XX Client Error(客户端错误状态码)5XX Server Error(服务器错误状态码)HTTP响应状态码有很多，但是实际经常使用的大概只有14个。">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/632130/201702/632130-20170210142134291-1976923079.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/632130/201702/632130-20170210141453338-1263276228.png">
+<meta property="og:updated_time" content="2017-10-17T11:29:08.241Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络编程问题整理">
-<meta name="twitter:description" content="1.常见的响应码401响应类别一共有5种：  1XX Informational(信息性状态码)2XX Success(成功状态码)3XX Redirection(重定向状态码)4XX Client Error(客户端错误状态码)5XX Server Error(服务器错误状态码)HTTP响应状态码有很多，但是实际经常使用的大概只有14个。">
+<meta name="twitter:description" content="http1.常见的响应码401响应类别一共有5种：  1XX Informational(信息性状态码)2XX Success(成功状态码)3XX Redirection(重定向状态码)4XX Client Error(客户端错误状态码)5XX Server Error(服务器错误状态码)HTTP响应状态码有很多，但是实际经常使用的大概只有14个。">
+<meta name="twitter:image" content="http://images2015.cnblogs.com/blog/632130/201702/632130-20170210142134291-1976923079.png">
   
   
     <link rel="icon" href="http://ot4uwpond.bkt.clouddn.com/favicon.png">
@@ -170,15 +173,42 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>1.常见的响应码401</strong><br>响应类别一共有5种：</p>
+        <h2 id="http"><a href="#http" class="headerlink" title="http"></a>http</h2><p><strong>1.常见的响应码401</strong><br>响应类别一共有5种：</p>
 <blockquote>
 <p>1XX Informational(信息性状态码)<br>2XX Success(成功状态码)<br>3XX Redirection(重定向状态码)<br>4XX Client Error(客户端错误状态码)<br>5XX Server Error(服务器错误状态码)<br>HTTP响应状态码有很多，但是实际经常使用的大概只有14个。<br><a id="more"></a></p>
-</blockquote>
 <p>200 OK 表示从客户端发来的请求在服务器端被正常处理了。<br>204 No Content 该状态码表示服务器接收的请求已成功处理，但在返回的响应报文中不含实体的主体部分。比如，当从浏览器发出请求处理后，返回204响应，那么浏览器显示的页面不发生更新。<br>206 Partial Content 该状态码表示客户端进行了范围请求，而服务器成功执行了这部分的GET请求。</p>
 <p>301 Moved Permanently 永久性重定向。该状态码表示请求的资源已经被分配了新的URI，以后应使用资源现在所指的URI。<br>302 Found 临时性重定向。该状态码表示请求的资源已被分配了新的URI，希望用户(本次)能使用新的URI访问。<br>303 See Other 该状态码表示由于请求对应的资源存在另外一个URI，应使用GET方法定向获取请求的资源。 303状态码和302状态码有着相同的功能，但303状态码明确表明客户端应当采用GET方法获取资源。 当301，302，303响应状态码返回时，几乎所有的浏览器都会把POST改成GET，并删除请求报文的主体，之后请求会自动再次发送。 301，302标准是禁止将POST方法改变成GET方法的，但实际上使用时大家都会这么做。<br>304 Not Modified 该状态码表示客户端发送附带条件的请求时，服务器端允许请求访问资源，但未满足条件的情况。304状态码返回时，不包含任何响应的主体部分。304虽然被划分在3XX类别中，但是和重定向没有关系。<br>307 Temporary Redirect 临时重定向。该状态码与302 Found有着相同的含义。307会遵照浏览器标准，不会从POST变成GET。</p>
 <p>400 Bad Request 该状态码表示请求报文中存在语法错误。当错误发生时，需要修改请求的内容后再次放松请求。<br>401 Unauthorized 该状态码表示发送的请求需要有通过HTTP认证的认证信息，另外若之前已进行过1此请求，则表示用户认证失败。<br>403 Forbidden 该状态码表明对请求资源的访问被服务器拒绝了。<br>404 Not Found 该状态码表明服务器上无法找到请求的资源。除此之外，也可以在服务器端拒绝请求且不想说明理由时使用。</p>
 <p>500 Internal Server Error 该状态码表明服务器端在执行请求时发生了错误。<br>503 Service Unavailable 该状态码表明服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。</p>
-<p>post请求传输数据放在哪里，http请求的格式<br>http请求怎么传输数据，如果有文本和文件怎么传，如果有重复的东西<br>https实现原理<br>TCP和UDP的区别<br>TCP怎么检测丢包了<br>进程和线程<br>http连接性能优化，长连接，keep-alive<br>前端安全（XSS、CSRF以及应对措施）<br>https的详细过程，使用的加密算法，是对称加密算法还是非对称加密算法。md5、SHA、AES分别是对称加密的还是非对称加密的<br>http包的格式和解析<br>soket阻塞模式<br>http1.0 和 http2.0 的区别<br>https 的详细过程，从握手到SSL协议，并说出为什么https并没有得到大规模应用<br>http 三次握手，和https握手<br>js如何发送请求，ajax原生写法以及ajax发送的HTTP头部，以及返回的HTTP头部信息，如何修改这些信息</p>
+</blockquote>
+<h2 id="Http缓存"><a href="#Http缓存" class="headerlink" title="Http缓存"></a>Http缓存</h2><p><strong>1.两种缓存规则-强制缓存和对比缓存</strong></p>
+<p>两类缓存规则的不同，强制缓存如果生效，不需要再和服务器发生交互，而对比缓存不管是否生效，都需要与服务端发生交互。<br>两类缓存规则可以同时存在，强制缓存优先级高于对比缓存，也就是说，当执行强制缓存的规则时，如果缓存生效，直接使用缓存，不再执行对比缓存规则。</p>
+<p><strong>2.强制缓存</strong><br>对于强制缓存来说，响应header中会有两个字段来标明失效规则（Expires/Cache-Control）</p>
+<p><strong>Expires</strong><br>　　Expires的值为服务端返回的到期时间，即下一次请求时，请求时间小于服务端返回的到期时间，直接使用缓存数据。</p>
+<blockquote>
+<p>不过Expires 是HTTP 1.0的东西，现在默认浏览器均默认使用HTTP 1.1，所以它的作用基本忽略。<br>另一个问题是，到期时间是由服务端生成的，但是客户端时间可能跟服务端时间有误差，这就会导致缓存命中的误差。<br>所以HTTP 1.1 的版本，使用Cache-Control替代。</p>
+</blockquote>
+<p><strong>Cache-Control</strong><br>Cache-Control常见的取值有private、public、no-cache、max-age、no-store，默认为private。</p>
+<blockquote>
+<p>private    客户端可以缓存<br>public    客户端和代理服务器都可缓存<br>max-age=xxx    缓存的内容将在 xxx 秒后失效<br>no-cache    需要使用对比缓存来验证缓存数据<br>no-store    所有内容都不会缓存，强制缓存，对比缓存都不会触发</p>
+</blockquote>
+<p><strong>3.对比缓存</strong><br>对比缓存需要进行比较判断是否可以使用缓存。</p>
+<blockquote>
+<p>浏览器第一次请求数据时，服务器会将缓存标识与数据一起返回给客户端，客户端将二者备份至缓存数据库中。<br>再次请求数据时，客户端将备份的缓存标识发送给服务器，服务器根据缓存标识进行判断，判断成功后，返回304状态码，通知客户端比较成功，可以使用缓存数据。</p>
+</blockquote>
+<p>缓存标识（Last-Modified/If-Modified-Since）的传递在请求header和响应header间进行传递。</p>
+<p><strong>Last-Modified(此字段在响应Headers)</strong><br>服务器在响应请求时，告诉浏览器资源的最后修改时间。</p>
+<p><strong>If-Modified-Since(此字段在请求Headers）</strong><br>再次请求服务器时，通过此字段通知服务器上次请求时服务器返回资源的最后修改时间。<br>服务器收到请求后发现有头If-Modified-Since则与被请求资源的最后修改时间进行比对。</p>
+<blockquote>
+<p>若资源的最后修改时间大于If-Modified-Since，说明资源又被改动过，则响应整片资源内容，返回状态码200；<br>若资源的最后修改时间小于或等于If-Modified-Since，说明资源无新修改，则响应HTTP 304，告知浏览器继续使用所保存的cache。</p>
+</blockquote>
+<p><strong>Etag/If-None-Match（优先级高于Last-Modified/If-Modified-Since）</strong><br>Etag(此字段在响应Headers)<br>服务器响应请求时，告诉浏览器当前资源在服务器的唯一标识（生成规则由服务器决定）。<br>If-None-Match(此字段在请求Headers)<br>再次请求服务器时，告诉服务器缓存数据在客户端的唯一标识。</p>
+<blockquote>
+<p>服务器收到请求后发现有头If-None-Match 则与被请求资源的唯一标识进行比对。<br>不同，说明资源又被改动过，则响应整片资源内容，返回状态码200；相同，说明资源无新修改，则响应HTTP 304，告知浏览器继续使用所保存的cache。</p>
+</blockquote>
+<p><strong>4.总结</strong><br>对于强制缓存，服务器通知浏览器一个缓存时间，在缓存时间内，下次请求，直接用缓存，不在时间内，执行比较缓存策略。<br>对于比较缓存，将缓存信息中的Etag和Last-Modified通过请求发送给服务器，由服务器校验，返回304状态码时，浏览器直接使用缓存。<br><img src="http://images2015.cnblogs.com/blog/632130/201702/632130-20170210142134291-1976923079.png" alt="浏览器第一次请求"></p>
+<p><img src="http://images2015.cnblogs.com/blog/632130/201702/632130-20170210141453338-1263276228.png" alt="浏览器再次请求时"></p>
+<p>浏览器缓存策略，时效标志etag标志<br>前端缓存机制，如果去掉etags\last-modefied\cache-control这些控制缓存的字段，浏览器会怎么处理缓存<br>post请求传输数据放在哪里，http请求的格式<br>http请求怎么传输数据，如果有文本和文件怎么传，如果有重复的东西<br>https实现原理<br>TCP和UDP的区别<br>TCP怎么检测丢包了<br>进程和线程<br>http连接性能优化，长连接，keep-alive<br>前端安全（XSS、CSRF以及应对措施）<br>https的详细过程，使用的加密算法，是对称加密算法还是非对称加密算法。md5、SHA、AES分别是对称加密的还是非对称加密的<br>http包的格式和解析<br>soket阻塞模式<br>http1.0 和 http2.0 的区别<br>https 的详细过程，从握手到SSL协议，并说出为什么https并没有得到大规模应用<br>http 三次握手，和https握手<br>js如何发送请求，ajax原生写法以及ajax发送的HTTP头部，以及返回的HTTP头部信息，如何修改这些信息</p>
 
       
 
@@ -393,7 +423,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">碎碎念</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -401,11 +431,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">笔试面试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">笔试面试</a>
+                <a href="javascript:void(0)" class="js-tag color4">碎碎念</a>
               </li>
             
             <div class="clearfix"></div>
