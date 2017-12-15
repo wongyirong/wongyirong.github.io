@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://wongyirong.github.io/2017/10/02/031/index.html">
 <meta property="og:site_name" content="裙角飞扬">
 <meta property="og:description" content="ES6 诞生以前，异步编程的方法，大概有下面四种。  回调函数 嵌套问题 回调函数地狱事件监听发布/订阅Promise对象 不是新的语法功能而是一种新的写法允许将回调函数的嵌套写成链式调用Generator函数 协程遇到yield命令就暂停，等到执行权返回，再从暂停的地方继续往后执行。但是用 generator 处理异步还是离不了 tj/co ，并且还有一些坑爹 bug 和兼容性问题async/a">
-<meta property="og:updated_time" content="2017-10-09T13:10:47.680Z">
+<meta property="og:updated_time" content="2017-12-15T07:24:17.426Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript异步问题整理">
 <meta name="twitter:description" content="ES6 诞生以前，异步编程的方法，大概有下面四种。  回调函数 嵌套问题 回调函数地狱事件监听发布/订阅Promise对象 不是新的语法功能而是一种新的写法允许将回调函数的嵌套写成链式调用Generator函数 协程遇到yield命令就暂停，等到执行权返回，再从暂停的地方继续往后执行。但是用 generator 处理异步还是离不了 tj/co ，并且还有一些坑爹 bug 和兼容性问题async/a">
@@ -200,7 +200,10 @@
 <p>调用 Generator 函数，返回一个遍历器对象，代表 Generator 函数的内部指针。以后，每次调用遍历器对象的next方法，就会返回一个有着value和done两个属性的对象。value属性表示当前的内部状态的值，是yield表达式后面那个表达式的值；done属性是一个布尔值，表示是否遍历结束。</p>
 </blockquote>
 <p>只有调用next方法才会遍历下一个内部状态，所以其实提供了一种可以暂停执行的函数。yield表达式就是暂停标志。</p>
+<p><strong>待完善问题</strong></p>
+<blockquote>
 <p>promise方法如何使用，分什么状态<br>ES6中如何处理异步，手写一个promise，有哪些状态？<br>es6中异步请求多个数据如何操作<br>ES6中的Promise，怎样实现依次异步回调<br>ES6感受 await、yield、Promise<br>promise，asyn await，还说了一个es6的一个异步处理关键字，<br>defer关键字<br>Promise方法你最常用什么写法？构造函数传入的参数是什么类型？<br>promise对象中抛出异常如何处理</p>
+</blockquote>
 
       
 
@@ -294,8 +297,8 @@
     </a>
   
   
-    <a href="/2017/10/01/030/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">缓存问题整理</div>
+    <a href="/2017/09/30/029/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">网络编程问题整理</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -415,7 +418,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color4">碎碎念</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -423,11 +426,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">笔试面试</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">碎碎念</a>
+                <a href="javascript:void(0)" class="js-tag color5">笔试面试</a>
               </li>
             
             <div class="clearfix"></div>

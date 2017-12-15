@@ -471,86 +471,6 @@
 
 
   
-    <article id="post-030" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/01/030/">缓存问题整理</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/01/030/" class="archive-article-date">
-  	<time datetime="2017-10-01T07:24:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="本地缓存"><a href="#本地缓存" class="headerlink" title="本地缓存"></a>本地缓存</h2><h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><p>cookie和session, cookie和webStorage的区别，如果cookie被篡改怎么办</p>
-<p>静态文件的web缓存机制</p>
-<p>原生js里面怎么操作cookie</p>
-<p>cors怎么让cookie传过去</p>
-<p>怎么给cookie中添加值</p>
-<p>cookie的形式，它的一些操作方法</p>
-<p>怎么删除cookie，如何使用原生js手动删除</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">笔试面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/01/030/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-029" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -782,6 +702,84 @@
 
 
   
+    <article id="post-026" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/22/026/">JavaScript的遍历</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/22/026/" class="archive-article-date">
+  	<time datetime="2017-09-22T10:50:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-for-while循环语句"><a href="#1-for-while循环语句" class="headerlink" title="1.for/while循环语句"></a>1.for/while循环语句</h4><p>最常见的遍历方法，for/while能力有限，而且性能上也堪忧。必须借助特定的结构才能遍历数据结构。</p>
+<h4 id="2-for…in语句-适用对象"><a href="#2-for…in语句-适用对象" class="headerlink" title="2.for…in语句 适用对象"></a>2.for…in语句 适用对象</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    <span class="attr">a</span>:<span class="string">"1"</span>,</div><div class="line">    <span class="attr">b</span>:<span class="string">"2"</span>,</div><div class="line">    <span class="attr">c</span>:<span class="string">"3"</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</div><div class="line">    <span class="built_in">console</span>.log(obj[key]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>优点：支持所有对象类型的数据，包括数组，甚至是函数等。<br>缺点：不仅遍历普通属性，也遍历原型链上的属性。<br>建议：在遍历常用对象时使用（不适用Map）</p>
+        
+          <a class="article-more-a" href="/2017/09/22/026/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/22/026/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -875,7 +873,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color4">碎碎念</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -883,11 +881,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">笔试面试</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">碎碎念</a>
+                <a href="javascript:void(0)" class="js-tag color5">笔试面试</a>
               </li>
             
             <div class="clearfix"></div>

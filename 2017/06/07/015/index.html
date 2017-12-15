@@ -17,7 +17,7 @@
 <meta property="og:description" content="JavaScript与HTML之间的交互式通过事件实现的。事件就是文档或者浏览器窗口中发生的一些特定的交互瞬间。 事件流即事件传播（event propagation），描述的是从页面接收事件的顺序。IE的是事件冒泡流，Netcape是事件捕获流。">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/dom-event.jpg">
 <meta property="og:image" content="http://ot4uwpond.bkt.clouddn.com/dom2-event.jpg">
-<meta property="og:updated_time" content="2017-10-02T12:52:59.830Z">
+<meta property="og:updated_time" content="2017-12-15T07:18:20.323Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DOM事件">
 <meta name="twitter:description" content="JavaScript与HTML之间的交互式通过事件实现的。事件就是文档或者浏览器窗口中发生的一些特定的交互瞬间。 事件流即事件传播（event propagation），描述的是从页面接收事件的顺序。IE的是事件冒泡流，Netcape是事件捕获流。">
@@ -174,11 +174,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="http://ot4uwpond.bkt.clouddn.com/dom-event.jpg" alt=""><br>JavaScript与HTML之间的交互式通过事件实现的。事件就是文档或者浏览器窗口中发生的一些特定的交互瞬间。</p>
-<h4 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h4><p>即事件传播（event propagation），描述的是从页面接收事件的顺序。IE的是事件冒泡流，Netcape是事件捕获流。<br><a id="more"></a></p>
+<h3 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h3><p>即事件传播（event propagation），描述的是从页面接收事件的顺序。IE的是事件冒泡流，Netcape是事件捕获流。<br><a id="more"></a></p>
 <p>1.事件冒泡<br>IE的事件流叫做事件冒泡（event bubbing），即事件最开始由最具体的元素（文档中嵌套层次最深的那个节点）接收，然后逐级向上传播至较为不具体的那个节点（文档）。<br><em>IE9等会一直冒泡到window对象。</em></p>
 <p>2.事件捕获<br>Netcape提出的另一种事件流叫做事件捕获（event capturing）。事件捕获的思想是不太具体的节点应该更早接收到事件，而最具体的节点应该最后接收到事件。事件捕获的用意在于在事件到达预定目标之前捕获它。<br><em>目前现代浏览器（IE9、chrome等）都支持这种这种事件流模型。但因为老版本不支持，很少使用。</em></p>
-<h4 id="DOM事件流"><a href="#DOM事件流" class="headerlink" title="DOM事件流"></a>DOM事件流</h4><p><img src="http://ot4uwpond.bkt.clouddn.com/dom2-event.jpg" alt=""><br>“DOM2级事件”规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。首先发生的是事件捕获，为截获事件提供了机会。然后是实际的目标接收到事件。最后一个阶段是冒泡阶段，可以在这个阶段对事件做出响应。<br><em>IE9等都会在捕获阶段触发事件对象上的事件。结果就是有两个机会在目标对象上面操作事件。IE8之下不支持DOM事件流。</em></p>
-<h4 id="事件处理程序"><a href="#事件处理程序" class="headerlink" title="事件处理程序"></a>事件处理程序</h4><p>事件处理程序（event handler）或事件监听程序（event listener）是处理或者响应事件的函数。处理事件程序的名字以”on”开头，比如click事件的事件处理程序就是onclick</p>
+<h3 id="DOM事件流"><a href="#DOM事件流" class="headerlink" title="DOM事件流"></a>DOM事件流</h3><p><img src="http://ot4uwpond.bkt.clouddn.com/dom2-event.jpg" alt=""><br>“DOM2级事件”规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。首先发生的是事件捕获，为截获事件提供了机会。然后是实际的目标接收到事件。最后一个阶段是冒泡阶段，可以在这个阶段对事件做出响应。<br><em>IE9等都会在捕获阶段触发事件对象上的事件。结果就是有两个机会在目标对象上面操作事件。IE8之下不支持DOM事件流。</em></p>
+<h3 id="事件处理程序"><a href="#事件处理程序" class="headerlink" title="事件处理程序"></a>事件处理程序</h3><p>事件处理程序（event handler）或事件监听程序（event listener）是处理或者响应事件的函数。处理事件程序的名字以”on”开头，比如click事件的事件处理程序就是onclick</p>
 <p>1.HTML事件处理程序<br>某个元素支持的每种事件，都可以使用一个与相应事件处理程序同名的HTML特性来指定。这个特性的值应该是能够执行的JavaScript代码。<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"HTML事件处理程序"</span> <span class="attr">id</span>=<span class="string">"btn1"</span> <span class="attr">onclick</span>=<span class="string">"showMes()"</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>缺点<br>1.时差问题：使用try-catch块捕捉错误。onclick=”try { showMessage() ;} catch(ex) {}”<br>2.程序的作用域链在不同浏览器中会导致不同结果<br>3.HTML和JS代码耦合紧密</p>
@@ -199,13 +199,13 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> handler = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="keyword">this</span>.id);</div><div class="line">&#125;;</div><div class="line">btn.attachEvent (“onclick”, handler);</div><div class="line">btn.detachEvent (“onclick”, handler);</div></pre></td></tr></table></figure>
 <p>5.跨浏览器的事件处理程序<br>创建一个对象eventUtil，拥有两个方法。<br>addHandler(要操作的元素，事件名称，事件处理函数)。<br>removeHandler(要操作的元素，事件名称，事件处理函数)。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> eventUtil = &#123;</div><div class="line">    <span class="comment">//添加句柄</span></div><div class="line">    addHandler: <span class="function"><span class="keyword">function</span>(<span class="params">element, type, handler</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (element.addEventListener) &#123;</div><div class="line">            element.addEventListener(type, handler, <span class="literal">false</span>);</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.attachEvent) &#123;</div><div class="line">            element.attachEvent(<span class="string">"on"</span> + type, handler);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            element[<span class="string">"on"</span> + type] = handler;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">//删除句柄</span></div><div class="line">    removeHandler: <span class="function"><span class="keyword">function</span>(<span class="params">element, type, handler</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (element.removeEventListener) &#123;</div><div class="line">            element.removeEventListener(type, handler, <span class="literal">false</span>);</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.detachEvent) &#123;</div><div class="line">            element.attachEvent(<span class="string">"on"</span> + type, handler);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            element[<span class="string">"on"</span> + type] = <span class="literal">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h4><p>事件对象（event object）：在触发DOM上的某个事件时，会产生一个事件对象event，这个对象中包含着所有与事件有关的信息。包括导致事件的元素、事件的类型以及其他与特定事件相关的信息。<br>1.DOM中的事件对象<br>（1）type属性 被触发的事件的类型<br>（2）target属性 事件的目标<br>（3）stopPropagation()方法 取消事件的进一步捕获或冒泡<br>（4）preventDefault()方法 取消事件的默认行为<br>2.IE中的事件对象<br>event对象作为window对象的一个属性存在。<br>（1）type属性 被触发的事件的类型<br>（2）srcElement属性 事件的目标<br>（3）cancelBubble属性 默认为false，设置成true可阻止事件冒泡<br>（4）returnValue属性 默认值为ture，设置成false可取消时间的默认行为</p>
+<h3 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h3><p>事件对象（event object）：在触发DOM上的某个事件时，会产生一个事件对象event，这个对象中包含着所有与事件有关的信息。包括导致事件的元素、事件的类型以及其他与特定事件相关的信息。<br>1.DOM中的事件对象<br>（1）type属性 被触发的事件的类型<br>（2）target属性 事件的目标<br>（3）stopPropagation()方法 取消事件的进一步捕获或冒泡<br>（4）preventDefault()方法 取消事件的默认行为<br>2.IE中的事件对象<br>event对象作为window对象的一个属性存在。<br>（1）type属性 被触发的事件的类型<br>（2）srcElement属性 事件的目标<br>（3）cancelBubble属性 默认为false，设置成true可阻止事件冒泡<br>（4）returnValue属性 默认值为ture，设置成false可取消时间的默认行为</p>
 <blockquote>
 <p>由于IE不支持事件捕获，</p>
 </blockquote>
 <p>更多属性方法，可查看W3C的事件：<br><a href="http://www.w3school.com.cn/jsref/dom_obj_event.asp" target="_blank" rel="external">W3C的DOM事件参考手册</a></p>
 <p>3.跨浏览器的事件对象<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> eventUtil = &#123;</div><div class="line">    <span class="attr">addHandler</span>: <span class="function"><span class="keyword">function</span>(<span class="params">element, type, handler</span>) </span>&#123;</div><div class="line">       <span class="comment">//忽略</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">removeHandler</span>: <span class="function"><span class="keyword">function</span>(<span class="params">element, type, handler</span>) </span>&#123;</div><div class="line">        <span class="comment">//忽略</span></div><div class="line">    &#125;，</div><div class="line">    getEvent: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> event ? event : <span class="built_in">window</span>.event;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">getType</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> event.type;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">getElement</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> event.target || event.srcElement;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">preventDefault</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (event.preventDefault) &#123;</div><div class="line">            event.preventDefault();</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            event.returnValue = <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">stopPropagation</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (event.stopPropagation) &#123;</div><div class="line">            event.stopPropagation();</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            event.cancelBubble = <span class="literal">true</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="事件类型"><a href="#事件类型" class="headerlink" title="事件类型"></a>事件类型</h4><p>一. DOM3级事件规定以下类型：<br>UI事件：当用户与页面上的元素交互时触发<br>焦点事件：当元素获得或失去焦点时触发<br>鼠标事件：当用户通过鼠标在页面上执行操作时触发<br>滚轮事件：当使用鼠标滚轮时触发<br>文本事件：当在文档中输入文本时触发<br>键盘事件：在用户通过键盘在页面上执行操作时触发<br>合成事件：当为输入法编辑器输入字符时触发<br>变动事件：当底层DOM结构发生变化时触发</p>
+<h3 id="事件类型"><a href="#事件类型" class="headerlink" title="事件类型"></a>事件类型</h3><p>一. DOM3级事件规定以下类型：<br>UI事件：当用户与页面上的元素交互时触发<br>焦点事件：当元素获得或失去焦点时触发<br>鼠标事件：当用户通过鼠标在页面上执行操作时触发<br>滚轮事件：当使用鼠标滚轮时触发<br>文本事件：当在文档中输入文本时触发<br>键盘事件：在用户通过键盘在页面上执行操作时触发<br>合成事件：当为输入法编辑器输入字符时触发<br>变动事件：当底层DOM结构发生变化时触发</p>
 <p>二. UI事件<br>UI事件：当用户与页面上的元素交互时触发<br>1.load事件<br>当页面完全加载后（包括所有图形、JavaScript文件、CSS文件等外部），就会触发window上面的load事件。<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="string">"loaded!"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>图像上面也可以触发load事件。在创建新的img元素时，要在指定src属性之前先指定事件。<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!--img元素也可以指定load事件，当图像成功下载执行load事件--&gt;</span></div><div class="line">   <span class="comment">&lt;!--如果图像路径有误，或者其他原因导致没有下载完成，则不会执行load事件--&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"smile.gif"</span> <span class="attr">onload</span>=<span class="string">"alert('Image loaded.')"</span> /&gt;</span></div></pre></td></tr></table></figure></p>
 <p>在IE9+的浏览器中，script标签也能触发load事件。</p>
@@ -302,7 +302,7 @@
 </tbody>
 </table>
 <p>2.关联<br>只有在同一个元素上相继触发mousedown和mouseup事件，才会触发click事件。<br>只有触发两次click事件，才会触发一次dblclick事件。<br>IE6 - 8中，双击时会跳过第二次mousedown和click事件.<br>3.坐标位置<br>鼠标事件发生的坐标位置保存在事件对象中。<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">myDIv.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">    alert(e.clientX + <span class="string">","</span> + e.clientY); <span class="comment">//在窗口中的位置</span></div><div class="line">    alert(e.pageX + <span class="string">","</span> + e.pageY);     <span class="comment">//在页面中的位置</span></div><div class="line">    alert(e.screenX + <span class="string">","</span> + e.screenY); <span class="comment">//在屏幕中的位置</span></div><div class="line">&#125;, <span class="literal">false</span>);</div></pre></td></tr></table></figure></p>
-<p>参考资料：<br>JS高级程序设计<br>W3school HTML DOM参考手册</p>
+<h3 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h3><p>JS高级程序设计<br>W3school HTML DOM参考手册</p>
 
       
 
@@ -386,11 +386,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/06/25/016/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/07/05/017/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          浏览器兼容性
+          一道JavaScript面试题
         
       </div>
     </a>
@@ -517,7 +517,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color4">碎碎念</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -525,11 +525,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">笔试面试</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">碎碎念</a>
+                <a href="javascript:void(0)" class="js-tag color5">笔试面试</a>
               </li>
             
             <div class="clearfix"></div>

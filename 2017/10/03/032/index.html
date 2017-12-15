@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://wongyirong.github.io/2017/10/03/032/index.html">
 <meta property="og:site_name" content="裙角飞扬">
 <meta property="og:description" content="对面试中的ES6相关问题进行整理，promise已在上一篇JavaScript异步问题整理介绍过，此处不再赘述。 ES6的新特性1、let所声明的变量只在let命令所在的代码块有效2、const声明一个只读的常量，一旦声明，常量的值就不能改变，必须立即初始化。只声明不赋值就会报错。  const保证的不是变量的值不得变动，而是变量指向的那个内存地址不得改动。  let和const  1.块级作用域">
-<meta property="og:updated_time" content="2017-10-09T13:02:28.600Z">
+<meta property="og:updated_time" content="2017-12-15T07:24:45.131Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6问题整理">
 <meta name="twitter:description" content="对面试中的ES6相关问题进行整理，promise已在上一篇JavaScript异步问题整理介绍过，此处不再赘述。 ES6的新特性1、let所声明的变量只在let命令所在的代码块有效2、const声明一个只读的常量，一旦声明，常量的值就不能改变，必须立即初始化。只声明不赋值就会报错。  const保证的不是变量的值不得变动，而是变量指向的那个内存地址不得改动。  let和const  1.块级作用域">
@@ -260,7 +260,9 @@
 <p>（1） 将Object对象的一些明显属于语言内部的方法（比如Object.defineProperty），放到Reflect对象上。现阶段，某些方法同时在Object和Reflect对象上部署，未来的新方法将只部署在Reflect对象上。也就是说，从Reflect对象上可以拿到语言内部的方法。<br>（2） 修改某些Object方法的返回结果，让其变得更合理。比如，Object.defineProperty(obj, name, desc)在无法定义属性时，会抛出一个错误，而Reflect.defineProperty(obj, name, desc)则会返回false。<br>（3） 让Object操作都变成函数行为。某些Object操作是命令式，比如name in obj和delete obj[name]，而Reflect.has(obj, name)和Reflect.deleteProperty(obj, name)让它们变成了函数行为。<br>（4）Reflect对象的方法与Proxy对象的方法一一对应，只要是Proxy对象的方法，就能在Reflect对象上找到对应的方法。这就让Proxy对象可以方便地调用对应的Reflect方法，完成默认行为，作为修改行为的基础。也就是说，不管Proxy怎么修改默认行为，你总可以在Reflect上获取默认行为。</p>
 </blockquote>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://www.w3cplus.com/javascript/use-cases-for-es6-proxies.html" target="_blank" rel="external">实例解析ES6 Proxy使用场景</a></p>
+<blockquote>
 <p>模块化, webpack, AMD和CMD<br>commonJS和AMD还有ES6本身的模块化的区别？<br>ES6是怎么实现继承的<br>promise，async，await<br>H5新特性和ES6新特性<br>es5和es6有什么区别<br>写个继承，es6继承是如何做到的<br>ES6中的继承（class）class 是把什么绑定在了什么上面？<br>es6实现类继承<br>es5，es6面向对象的写法。<br>ES6模块机制<br>promise方法如何使用，分什么状态<br>柯里化函数解决,但是没写出来,面试官提示ES6.</p>
+</blockquote>
 <h2 id="ES6特性如下"><a href="#ES6特性如下" class="headerlink" title="ES6特性如下"></a>ES6特性如下</h2><p>1.块级作用域 关键字let, 常量const</p>
 <p>2.对象字面量的属性赋值简写（property value shorthand）<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    <span class="comment">// __proto__</span></div><div class="line">    __proto__: theProtoObj,</div><div class="line">    <span class="comment">// Shorthand for ‘handler: handler’</span></div><div class="line">    handler,</div><div class="line">    <span class="comment">// Method definitions</span></div><div class="line">    toString() &#123;</div><div class="line">    <span class="comment">// Super calls</span></div><div class="line">    <span class="keyword">return</span> <span class="string">"d "</span> + <span class="keyword">super</span>.toString();</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// Computed (dynamic) property names</span></div><div class="line">    [ <span class="string">'prop_'</span> + <span class="function">(<span class="params">(</span>) =&gt;</span> <span class="number">42</span>)() ]: <span class="number">42</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 <p>3.赋值解构<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> singer = &#123; <span class="attr">first</span>: <span class="string">"Bob"</span>, <span class="attr">last</span>: <span class="string">"Dylan"</span> &#125;;</div><div class="line"><span class="keyword">let</span> &#123; <span class="attr">first</span>: f, <span class="attr">last</span>: l &#125; = singer; <span class="comment">// 相当于 f = "Bob", l = "Dylan"</span></div><div class="line"><span class="keyword">let</span> [all, year, month, day] =  <span class="regexp">/^(\d\d\d\d)-(\d\d)-(\d\d)$/</span>.exec(<span class="string">"2015-10-25"</span>);</div><div class="line"><span class="keyword">let</span> [x, y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; <span class="comment">// x = 1, y = 2</span></div></pre></td></tr></table></figure></p>
@@ -507,7 +509,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color4">碎碎念</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -515,11 +517,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">笔试面试</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">碎碎念</a>
+                <a href="javascript:void(0)" class="js-tag color5">笔试面试</a>
               </li>
             
             <div class="clearfix"></div>

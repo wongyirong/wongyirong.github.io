@@ -17,7 +17,7 @@
 <meta property="og:description" content="http1.常见的响应码401响应类别一共有5种：  1XX Informational(信息性状态码)2XX Success(成功状态码)3XX Redirection(重定向状态码)4XX Client Error(客户端错误状态码)5XX Server Error(服务器错误状态码)HTTP响应状态码有很多，但是实际经常使用的大概只有14个。">
 <meta property="og:image" content="http://images2015.cnblogs.com/blog/632130/201702/632130-20170210142134291-1976923079.png">
 <meta property="og:image" content="http://images2015.cnblogs.com/blog/632130/201702/632130-20170210141453338-1263276228.png">
-<meta property="og:updated_time" content="2017-10-17T11:29:08.241Z">
+<meta property="og:updated_time" content="2017-12-15T07:23:13.588Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络编程问题整理">
 <meta name="twitter:description" content="http1.常见的响应码401响应类别一共有5种：  1XX Informational(信息性状态码)2XX Success(成功状态码)3XX Redirection(重定向状态码)4XX Client Error(客户端错误状态码)5XX Server Error(服务器错误状态码)HTTP响应状态码有很多，但是实际经常使用的大概只有14个。">
@@ -208,7 +208,9 @@
 </blockquote>
 <p><strong>4.总结</strong><br>对于强制缓存，服务器通知浏览器一个缓存时间，在缓存时间内，下次请求，直接用缓存，不在时间内，执行比较缓存策略。<br>对于比较缓存，将缓存信息中的Etag和Last-Modified通过请求发送给服务器，由服务器校验，返回304状态码时，浏览器直接使用缓存。<br><img src="http://images2015.cnblogs.com/blog/632130/201702/632130-20170210142134291-1976923079.png" alt="浏览器第一次请求"></p>
 <p><img src="http://images2015.cnblogs.com/blog/632130/201702/632130-20170210141453338-1263276228.png" alt="浏览器再次请求时"></p>
+<h2 id="待完善问题"><a href="#待完善问题" class="headerlink" title="待完善问题"></a>待完善问题</h2><blockquote>
 <p>浏览器缓存策略，时效标志etag标志<br>前端缓存机制，如果去掉etags\last-modefied\cache-control这些控制缓存的字段，浏览器会怎么处理缓存<br>post请求传输数据放在哪里，http请求的格式<br>http请求怎么传输数据，如果有文本和文件怎么传，如果有重复的东西<br>https实现原理<br>TCP和UDP的区别<br>TCP怎么检测丢包了<br>进程和线程<br>http连接性能优化，长连接，keep-alive<br>前端安全（XSS、CSRF以及应对措施）<br>https的详细过程，使用的加密算法，是对称加密算法还是非对称加密算法。md5、SHA、AES分别是对称加密的还是非对称加密的<br>http包的格式和解析<br>soket阻塞模式<br>http1.0 和 http2.0 的区别<br>https 的详细过程，从握手到SSL协议，并说出为什么https并没有得到大规模应用<br>http 三次握手，和https握手<br>js如何发送请求，ajax原生写法以及ajax发送的HTTP头部，以及返回的HTTP头部信息，如何修改这些信息</p>
+</blockquote>
 
       
 
@@ -292,11 +294,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/10/01/030/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/10/02/031/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          缓存问题整理
+          JavaScript异步问题整理
         
       </div>
     </a>
@@ -423,7 +425,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color4">碎碎念</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -431,11 +433,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">笔试面试</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">碎碎念</a>
+                <a href="javascript:void(0)" class="js-tag color5">笔试面试</a>
               </li>
             
             <div class="clearfix"></div>
